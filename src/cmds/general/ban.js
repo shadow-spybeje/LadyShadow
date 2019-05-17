@@ -2,12 +2,12 @@ module.exports = {
     coded : "2019-04-05",
     name : "ban",
     aliases : ["hammer"],
-    description : "Bans the desired cranky member.\nRequires `Admin` set role, or `BAN_MEMBERS` permission.",
-    usage : "<@user || User.ID> <Reason>",
+    description : "Bans the desired cranky member.\nRequires `Admin` set role, or `BAN_MEMBERS` permission.\n\nDoes not support ID's. [yet]",
+    usage : "<@user> <Reason>",
     guildOnly : true,
     args : true,
 
-    help : "mod",
+    help : "admin",
 
     execute(message, args){
         bot = message.client;
@@ -18,7 +18,7 @@ module.exports = {
         admin = false;
         staff = false
 
-        settings = bot.g.get(message.guild.id);
+        settings = bot.settings.g.get(message.guild.id);
         if(settings.admin) admin = true;
         if(settings.staff) staff = true;
 
