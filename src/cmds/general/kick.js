@@ -2,11 +2,10 @@ module.exports = {
     coded : "2019-04-05",
     name : "kick",
     aliases : ["boot"],
-    description : "Kicks the desired cranky member.\nRequires `Moderator` set role, or `KICK_MEMBERS` permission.",
-    usage : "<@user || User.ID> <Reason>",
+    description : "Kicks the desired cranky member.\nRequires `Moderator` set role, or `KICK_MEMBERS` permission.\n\nDoes not support ID's [yet]",
+    usage : "<@user> <Reason>",
     guildOnly : true,
     args : true,
-
     help : "mod",
 
     execute(message, args){
@@ -19,7 +18,7 @@ module.exports = {
         moderator = false;
         staff = false;
 
-        settings = bot.g.get(message.guild.id);
+        settings = bot.settings.g.get(message.guild.id);
         if(settings.admin) admin = true;
         if(settings.moderator) moderator = true;
         if(settings.staff) staff = true;
@@ -29,7 +28,10 @@ module.exports = {
         if(!message.guild.members.get(message.client.user.id).permissions.has("KICK_MEMBERS")) return message.reply("I require the `KICK_MEMBERS` permission to Kick somebody!!\nYou can by selecting the user in question and tap `Kick Member`");
 
         if(args.length == 0 || !message.mentions.members) return message.reply(`Please mention a user to kick.\n\`${settings.prefix}kick <@user> <reason>\``);
-        if(args.length <= 1) return message.reply(`Please provide a reason for kicking ${message.mentions.members.first().user.tag}`);
+
+        if(message.mentions.members.first().id == message.guild.owner.id) return message.reply(`i cannot kick the Guild Owner!! :warning: :warning: :interrobang:`);
+
+        if(args.length == 1) return message.reply(`Please provide a reason for kicking ${message.mentions.members.first().user.tag}`);
 
         member = message.mentions.members.first();
         removeMember = args.shift();
