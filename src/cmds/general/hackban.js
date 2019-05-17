@@ -6,7 +6,7 @@ module.exports = {
     guildOnly : true,
     args : true,
 
-    help : "mod",
+    help : "admin",
 
     execute(message, args){
         bot = message.client;
@@ -17,11 +17,11 @@ module.exports = {
         admin = false;
         staff = false
 
-        settings = bot.g.get(message.guild.id);
+        settings = bot.settings.g.get(message.guild.id);
         if(settings.admin) admin = true;
         if(settings.staff) staff = true;
 
-        if(!admin && !staff && !message.member.permissions.has("BAN_MEMBERS") && message.author.id != message.guild.ownerid) return message.reply("You require either the servers `ADMIN` role, or `BAN_MEMBERS` permission to hack-ban members.");
+        if(!admin && !staff && !message.member.permissions.has("BAN_MEMBERS") && message.author.id != message.guild.owner.id) return message.reply("You require either the servers `ADMIN` role, or `BAN_MEMBERS` permission to hack-ban members.");
 
         if(!message.guild.members.get(message.client.user.id).permissions.has("BAN_MEMBERS")) return message.reply("I require the `BAN_MEMBERS` permission to Hack-ban somebody!!");
 
