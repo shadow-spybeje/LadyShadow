@@ -1,3 +1,4 @@
+[![Discord Bots](https://discordbots.org/api/widget/347872963636494337.svg)](https://discordbots.org/bot/347872963636494337)
 # {HSF}LadyShadow#7111
 Coded by Discord Users: `§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)` && `Bejebajay#1904 ({HSF}Bejebajay)`
 
@@ -14,6 +15,3 @@ Coded by Discord Users: `§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)` && `Bejebaja
 • Did you find a Bug, or simply have a Suggestion?
 
 • • Then Make a post [here.](https://github.com/ScionSpy/LadyShadow/issues/new)
-
-#
-[![Discord Bots](https://discordbots.org/api/widget/347872963636494337.svg)](https://discordbots.org/bot/347872963636494337)
