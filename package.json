@@ -1,13 +1,13 @@
 {
   "name": "ladyshadow-alpha",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "alpha": true,
   "description": "{HSF}LadyShadow#7111's Alpha version.",
   "main": "shard.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ScionSpy && Bejabajay.",
+  "author": "ScionSpy#1904 && Bejabajay#1904.",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2"
