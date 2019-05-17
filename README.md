@@ -10,6 +10,7 @@ Coded by Discord Users: `§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)` && `Bejebaja
 
 • `Invite:` [Bot Invite](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)
 
-
+# 
 • Did you find a Bug, or simply have a Suggestion?
+
 • • Then Make a post [here.](https://github.com/ScionSpy/LadyShadow/issues/new)
