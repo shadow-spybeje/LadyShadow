@@ -72,7 +72,7 @@ module.exports = {
         e = new discord.RichEmbed();
         e.setColor("ffff00")
         e.setTitle("Reload")
-        e.setDescription(`__**${cmd}**__ has been reloaded.\nPath : \`./LadyShadow-git/Src/Cmds/${args.join('/')}.js\``)
+        e.setDescription(`__**${cmd}**__ has been reloaded.\nPath : \`./LadyShadow_/src/cmds/${args.join('/')}.js\``)
         e.setFooter(bot.functions.get("date").execute(Date.now()))
 
         message.channel.send(e);
