@@ -1,0 +1,46 @@
+{
+  "client" : {
+    "owners" : ["213250789823610880", "295404527308242944", "116930717241311236", "430638153309880321"],
+    "comment-owners" : ["Spy", "Beje", "Luke", "Ashle"],
+    "support" : [],
+    "comment-support" : [],
+
+      "comment-shadowServers" : "--//shadowServers is a list of servers that are defined as \"Support\".",
+    "shadowServers" : [
+      {
+      "name" : "Shadow Community",
+      "id" : "432290478780579845",
+      "server" : "432290478780579845",
+      "support" : "499074006511517696",
+      "report" : ""
+      },
+      {
+        "name" : "The Devil Family",
+        "id" : "361779296513294336",
+        "server" : "361779296513294336",
+        "support" : "376685678164967425",
+        "report" : ""
+      },
+      {
+      "name" : "The Community",
+      "id" : "566121499745058818",
+      "server" : "570337261120651290",
+      "support" : "570337280477364234",
+      "report" : "570337300278411284"
+      }
+    ]
+  },
+
+
+  "prefixes" : {
+    "global" : "..",
+    "owner" : "??"
+  },
+
+
+  "default" : {
+    "prefix" : "..",
+    "dmhelp" : false,
+    "color" : "00ffff"
+  }
+}
