@@ -23,7 +23,7 @@ module.exports = {
     bot.cmds.help.mod = new discord.Collection();
     bot.cmds.help.admin = new discord.Collection();
     bot.cmds.help.owner = new discord.Collection();
-    bot.cmds.help.parnter = new discord.Collection();
+    bot.cmds.help.partner = new discord.Collection();
     bot.cmds.help.patreon = new discord.Collection();
 
 
@@ -119,7 +119,7 @@ module.exports = {
           cat = "Owner";
           cmds = cmdsOwner;
         break;
-        case("parnter"):
+        case("partner"):
         case("4"):
           cat = "Partner";
           cmds = cmdsPartner;
