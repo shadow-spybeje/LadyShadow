@@ -5,12 +5,12 @@ Coded by Discord Users: `§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)` && `Bejebaja
 
 • Required Files: `discord.js` || Install with: `npm -i discord.js --save`
 
-# Links
+#
 • `Discord:` [Support Server](https://discord.gg/9FUpBPQ)
 
 • `Invite:` [Bot Invite](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)
 
-# 
+#
 • Did you find a Bug, or simply have a Suggestion?
 
 • • Then Make a post [here.](https://github.com/ScionSpy/LadyShadow/issues/new)
