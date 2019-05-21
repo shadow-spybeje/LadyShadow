@@ -76,5 +76,15 @@ module.exports = {
          * [3] Watching
          * • {type: ' '}
         */
+
+        e = new discord.RichEmbed()
+            .setColor(bot.defaults.color)
+            .setAuthor("Boot Log", bot.user.avatarURL)
+            .setDescription(`\`\`\`css\nDev Reboot? ${bot.config.misc.devBoot}\n\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
+
+            bot.support.shadowServers.forEach(guild => {
+                ch = bot.channels.get(guild.support);
+                ch.send(e);
+            });
     }
 };
