@@ -46,7 +46,14 @@ module.exports = {
             console.error(err);
             bot.support.shadowServers.forEach(guild => {
                 ch = bot.channels.get(guild.server);
-                ch.send(`Failed to create Guild \`SETTINGS\`.\nPlease review the code, and manually create!!`);
+
+                errEmbed = new discord.RichEmbed()
+                  .setTitle("Cannot Create Settings!!")
+                  .setColor("ff0000")
+                  .setDescription(err)
+
+                ch.send(errEmbed);
+                //ch.send(`Failed to create Guild \`SETTINGS\`.\nPlease review the code, and manually create!!`);
             });
         };
     }

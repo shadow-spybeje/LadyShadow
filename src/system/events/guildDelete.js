@@ -50,7 +50,14 @@ module.exports = {
             console.error(err);
             bot.support.shadowServers.forEach(guild => {
                 ch = bot.channels.get(guild.server);
-                ch.send(`Failed to delete Guild \`SETTINGS\`.\nPlease review the code and manually delete the file!!`);
+
+                errEmbed = new discord.RichEmbed()
+                .setTitle("Cannot Create Settings!!")
+                .setColor("ff0000")
+                .setDescription(err)
+
+                ch.send(errEmbed);
+                //ch.send(`Failed to delete Guild \`SETTINGS\`.\nPlease review the code and manually delete the file!!`);
             });
         };
     }
