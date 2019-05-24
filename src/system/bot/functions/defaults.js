@@ -5,7 +5,7 @@ module.exports = {
 
     name : "default",
     description : "This is the default Settings files for both new Guilds and Users.",
-    usage : "bot.functions.get('default').execute('<Guild || User>', info)",
+    usage : "bot.functions.get('default').execute('<Guild || User>', guild/user, bot)",
 
     execute(type, info, bot){
 
@@ -24,9 +24,9 @@ module.exports = {
                 "icon" : `${guild.iconURL}`,
 
                   "comment-general" : "General Settings",
-                "prefix" : `${bot.default.prefix}`,
-                "dmhelp" : bot.default.dmhelp,
-                "color" : `${bot.default.color}`,
+                "prefix" : `${bot.defaults.prefix}`,
+                "dmhelp" : bot.defaults.dmhelp,
+                "color" : `${bot.defaults.color}`,
 
                   "comment-channels" : "Channel ID's",
                 "welcome" : "",
