@@ -1,7 +1,7 @@
-###[Raw Format -- Better Readability](https://raw.githubusercontent.com/shadow-spybeje/LadyShadow/master/docs/ChangeLog.md)
+### [Raw Format -- Better Readability](https://github.com/shadow-spybeje/LadyShadow/blob/master/docs/Readme.md)
 ----------
-#---==☆ What's New?? ☆==---
-  ##---==☆ v.4.0.0 ☆==---
+# ---==☆ What's New?? ☆==---
+  ## ---==☆ v.4.0.0 ☆==---
 
 [April 4'th, 2019] (Version 4 rewrite)
 
@@ -22,8 +22,8 @@
 
 
 
-#---==☆ Dev Notes ☆ ==---
-  ##-- Random Comments from the Developers --
+# ---==☆ Dev Notes ☆ ==---
+  ## -- Random Comments from the Developers --
 
 • SRPG
 • • The SRPG will no longer be hosted Directly inside of Shadow.
@@ -40,8 +40,8 @@
 
 
 
-#---==☆ Known Bugs ☆ ==---
-  ##-- Bugs are always expected to be priority --
+# ---==☆ Known Bugs ☆ ==---
+  ## -- Bugs are always expected to be priority --
 
 • <BUG> [VERSION REPORTED] [DATE]
 • --> 🐛 <-- Bug [v4.0.0] [2019-05-07]
@@ -53,15 +53,15 @@
 
 
 
-#---==☆ What's Next?? ☆==---
-   ##---==☆ v.3.0.6 ☆==---
+# ---==☆ What's Next?? ☆==---
+   ## ---==☆ v.3.0.6 ☆==---
 
 •
 
 
 
 
-#---==☆ What's Planned ☆==---
+# ---==☆ What's Planned ☆==---
 
 [System]
 • [v4.0.0]`DB-`TimeZone's
@@ -79,7 +79,7 @@
 • [v3.0.4-]`Feature-`User TZ -- Certain Embeds will show Server or User TZ's
 
 -----
-  ##---==☆ v.4.0.1+ ☆==---
+  ## ---==☆ v.4.0.1+ ☆==---
 
 [Server]
 • `Cmd-`Set <Enable | Disable> <cmd>
