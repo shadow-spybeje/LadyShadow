@@ -16,6 +16,7 @@ module.exports = {
                 bots++
             };
         });
+
         bot.guilds.forEach(g => {
             users+=g.memberCount;
         });
@@ -80,7 +81,7 @@ module.exports = {
         e = new discord.RichEmbed()
             .setColor(bot.defaults.color)
             .setAuthor("Boot Log", bot.user.avatarURL)
-            .setDescription(`\`\`\`css\nDev Reboot? ${bot.config.misc.devBoot}\n\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
+            .setDescription(`\`\`\`css\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
 
             bot.support.shadowServers.forEach(guild => {
                 ch = bot.channels.get(guild.support);
