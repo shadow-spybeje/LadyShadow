@@ -1,7 +1,9 @@
----==☆ What's New?? ☆==---
-  ---==☆ v.4.0.0 ☆==---
+###https://raw.githubusercontent.com/shadow-spybeje/LadyShadow/master/docs/ChangeLog.md
+----------
+#---==☆ What's New?? ☆==---
+  ##---==☆ v.4.0.0 ☆==---
 
-[April 4'th, 2019]
+[April 4'th, 2019] (Version 4 rewrite)
 
 • Recreate // Orginization of the Bot Folder.
 • • Edits Needed in -- src : {
@@ -11,7 +13,7 @@
 
 
 • [Planned--v3.0.4-]
-• • `Cmd-`Help {Enhancement : CATEGORIES!! "help mod", "help fun", "help all", "help srpg" etc.} [v.4.0.0]
+• • `Cmd-`Help {Enhancement : CATEGORIES!! "help mod", "help fun", "help all", "help srpg" etc.} [v.4.0.0] -- Still needs some work.
 
 
 [Owner]
@@ -20,8 +22,8 @@
 
 
 
----==☆ Dev Notes ☆ ==---
-  -- Random Comments from the Developers --
+#---==☆ Dev Notes ☆ ==---
+  ##-- Random Comments from the Developers --
 
 • SRPG
 • • The SRPG will no longer be hosted Directly inside of Shadow.
@@ -30,35 +32,36 @@
 • • • User A on Bot-Shadow can play with User B on Bot-Gidjet!!
 
 
+
 • Commands
-• • Not all of the commands are yet functioning. However, most of them have been rewritten/configured to run along sdie the [v.4] rewrite.
+• • Not all of the commands are yet functioning. However, most of them have been rewritten/configured to run along side the [v.4] rewrite.
 • • • If you notice any issues or Bugs, please report them to the Bot Developers immediatly!!
-• • • `..invite` [--> Support --> #support]
+• • • `..invite` [--> Support --> [#support](https://discordapp.com/channels/416906584900239370/499074006511517696)]
 
 
 
----==☆ Known Bugs ☆ ==---
-  -- Bugs are always expected to be priority --
+#---==☆ Known Bugs ☆ ==---
+  ##-- Bugs are always expected to be priority --
 
 • <BUG> [VERSION REPORTED] [DATE]
 • --> 🐛 <-- Bug [v4.0.0] [2019-05-07]
 • • It's green and wriggles!!
 
-• `Cmd-`Set [v.4.0.0] [2019-05-16]
+• `Cmd-`Set [v.4.0.0] [2019-05-16] (Now Disabled)
 • • Anyone could use!!
 
 
 
 
----==☆ What's Next?? ☆==---
-   ---==☆ v.3.0.6 ☆==---
+#---==☆ What's Next?? ☆==---
+   ##---==☆ v.3.0.6 ☆==---
 
 •
 
 
 
 
----==☆ What's Planned ☆==---
+#---==☆ What's Planned ☆==---
 
 [System]
 • [v4.0.0]`DB-`TimeZone's
@@ -76,7 +79,7 @@
 • [v3.0.4-]`Feature-`User TZ -- Certain Embeds will show Server or User TZ's
 
 -----
-  ---==☆ v.4.0.1+ ☆==---
+  ##---==☆ v.4.0.1+ ☆==---
 
 [Server]
 • `Cmd-`Set <Enable | Disable> <cmd>
