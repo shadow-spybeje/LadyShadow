@@ -1,4 +1,4 @@
-###https://raw.githubusercontent.com/shadow-spybeje/LadyShadow/master/docs/ChangeLog.md
+###[Raw Format -- Better Readability](https://raw.githubusercontent.com/shadow-spybeje/LadyShadow/master/docs/ChangeLog.md)
 ----------
 #---==☆ What's New?? ☆==---
   ##---==☆ v.4.0.0 ☆==---
