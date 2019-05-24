@@ -2,7 +2,7 @@
   ### -- Bugs are always expected to be priority --
 
 #### Format:
-#### ```<BUG>
+```<BUG>
 [VERSION REPORTED] [DATE]
 <The Problem>```
 ----------
