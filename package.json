@@ -7,8 +7,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadow-spybeje/LadyShadow.git"
+  },
   "author": "ScionSpy#1904 && Bejabajay#1904.",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadow-spybeje/LadyShadow/issues"
+  },
+  "homepage": "https://github.com/shadow-spybeje/LadyShadow#readme",
   "dependencies": {
     "discord.js": "^11.4.2"
   }
