@@ -33,4 +33,4 @@ Cmd-Set `(Now Disabled)`
 
 ### [Reporting](https://github.com/shadow-spybeje/LadyShadow/issues/new)
 
-### Discord [#Support](https://discordapp.com/channels/416906584900239370/499074006511517696) | [Invite](https://discord.gg/9FUpBPQ)
+### Discord [Invite](https://discord.gg/9FUpBPQ) | [#Support](https://discordapp.com/channels/416906584900239370/499074006511517696)
