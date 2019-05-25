@@ -22,3 +22,6 @@
 • • Edits Needed in -- src : {
   cmds : { general : [ set, user ] },
 }
+
+----------
+### [What's Next?](https://github.com/shadow-spybeje/LadyShadow/blob/master/docs/Whats_Next.md)

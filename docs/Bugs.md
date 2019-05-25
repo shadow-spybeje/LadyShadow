@@ -28,3 +28,9 @@ Cmd-Set `(Now Disabled)`
 [v.4.0.0] [2019-05-16]
 • Anyone could use!!
 ```
+----------
+### [Reported Bugs](https://github.com/orgs/shadow-spybeje/projects/1)
+
+### [Reporting](https://github.com/shadow-spybeje/LadyShadow/issues/new)
+
+### Discord [#Support](https://discordapp.com/channels/416906584900239370/499074006511517696) | [Invite](https://discord.gg/9FUpBPQ)
