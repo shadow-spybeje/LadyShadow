@@ -5,7 +5,7 @@
 
 • A basic Moderation bot who's main feature is an in-Progress RPG.
 
-• Required Files: [discord.js](https://discord.js.org/#/) || Install with: `npm -i discord.js --save`
+• Required Files: [discord.js](https://discord.js.org/#/) || Install with: `npm i discord.js --save`
 
 ----------
 #### [Discord Support Server](https://discord.gg/9FUpBPQ)
