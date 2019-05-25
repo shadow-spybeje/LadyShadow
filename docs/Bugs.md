@@ -1,4 +1,4 @@
-//# ---==☆ Known Bugs ☆ ==---
+# ---==☆ Known Bugs ☆ ==---
   ### -- Bugs are always expected to be priority --
 
 Before reporting a Bug, please check our [Shadow Bugs Project](https://github.com/orgs/shadow-spybeje/projects/1) and make sure there's not already a bug of the same details reported.
