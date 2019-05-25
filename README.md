@@ -13,4 +13,6 @@
 #### [Bot Invite](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)
 
 ----------
-[Docs](https://github.com/shadow-spybeje/LadyShadow/blob/master/docs/Readme.md)
+[Docs](https://github.com/shadow-spybeje/LadyShadow/blob/master/docs/Readme.md) -- Notes
+[Src](https://github.com/shadow-spybeje/LadyShadow/blob/master/src/README.md) -- Code
+[SRPG](https://github.com/shadow-spybeje/Shadow-RPG) -- Shadow's RPG [V.2]
