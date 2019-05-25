@@ -1,4 +1,4 @@
-# ---==☆ What's Planned ☆==---
+# ---==☆ Upcoming Updates ☆==---
 
 #### [System]
 [v4.0.0]`DB-`TimeZone's
