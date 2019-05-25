@@ -1,17 +1,16 @@
+### {HSF}LadyShadow#7111
 [![Discord Bots](https://discordbots.org/api/widget/347872963636494337.svg)](https://discordbots.org/bot/347872963636494337)
-# {HSF}LadyShadow#7111
-Coded by Discord Users: `§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)` && `Bejebajay#1904 ({HSF}Bejebajay)`
+
+#### Coded by Discord Users: [§π∆d°≈~§¶¥#1904 ({HSF}ScionSpy)](https://discordbots.org/user/213250789823610880) && [Bejebajay#1904 ({HSF}Bejebajay)](https://discordbots.org/user/295404527308242944)
 
 • A basic Moderation bot who's main feature is an in-Progress RPG.
 
-• Required Files: `discord.js` || Install with: `npm -i discord.js --save`
+• Required Files: [discord.js](https://discord.js.org/#/) || Install with: `npm -i discord.js --save`
 
-#
-• `Discord:` [Support Server](https://discord.gg/9FUpBPQ)
+----------
+#### [Discord Support Server](https://discord.gg/9FUpBPQ)
 
-• `Invite:` [Bot Invite](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)
+#### [Bot Invite](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)
 
-#
-• Did you find a Bug, or simply have a Suggestion?
-
-• • Then Make a post [here.](https://github.com/ScionSpy/LadyShadow/issues/new)
+----------
+[Docs](https://github.com/shadow-spybeje/LadyShadow/blob/master/docs/Readme.md)
