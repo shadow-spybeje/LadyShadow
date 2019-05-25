@@ -12,7 +12,7 @@
 • • User A on Bot-Shadow can play with User B on Bot-Gidjet!!
 -----
 
-### Commands
+//### Commands
 
 • Not all of the commands are yet functioning. However, most of them have been rewritten/configured to run along side the [v.4] rewrite.
 
