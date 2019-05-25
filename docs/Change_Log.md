@@ -1,4 +1,4 @@
-//# ChangeLog
+# ChangeLog
 -----
 
 ## ---==☆ What's New?? ☆==---
