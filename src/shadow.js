@@ -30,5 +30,9 @@ bot.on('ready', () => { bot.events.get('ready').execute(bot); });
 bot.on('guildCreate', (guild) => { bot.events.get('newGuild').execute(bot, guild); });
 bot.on('guildDelete', (guild) => { bot.events.get('oldGuild').execute(bot, guild); });
 bot.on('message', (message) => { bot.events.get('message').execute(bot, message); });
+bot.on("guildMemberAdd", (member) => { bot.events.get('newMember').execute(bot, member); });
+bot.on("guildMemberRemove", (member) => { bot.events.get("oldMember").execute(bot, member); });
+
+
 
 bot.login(bot.token);
