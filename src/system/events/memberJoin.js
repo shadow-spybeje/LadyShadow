@@ -22,5 +22,9 @@ module.exports = {
         e.setFooter(`${bot.functions.get('date').execute(Date.now())}`);
 
         member.guild.channels.get(settings.welcome).send(e);
+
+        if(!settings.join) return;
+        member.addRole(settings.join, "New-User -- Give \"Join\" Role.")
+          .catch(err => member.guild.channels.get(settings.welcome).send(err));
     }
 }
