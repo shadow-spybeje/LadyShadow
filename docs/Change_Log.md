@@ -15,7 +15,7 @@ Join/Leave messages are back!!
 Edits Needed in:
 ```
 src : {
-  cmds : { general : [ set, user ] },
+  cmds : { general : [ color, set, user ] },
 }
 ```
 

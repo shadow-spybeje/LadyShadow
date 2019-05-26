@@ -4,6 +4,7 @@ module.exports = {
     usage : "[hexCode] || [. hexCode]",
 
     execute(message, args){
+        bot = message.client;
 
         let hex = true;
         if(args.length >= 2) if(args[0].toLowerCase() == ".") hex = false;
