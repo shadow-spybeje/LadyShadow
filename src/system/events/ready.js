@@ -6,6 +6,15 @@ module.exports = {
     usage : "`bot.events.get(\"ready\").execute(bot)`",
 
     execute(bot){
+
+          //Connect to the SRPG,
+        async function bootSRPG(){
+            const SRPG = require('../../../../Shadow-RPG').execute();
+            srpg = SRPG;
+        };
+        bootSRPG();
+
+
         console.log("---==☆ Client ☆==---\n");
 
         let users = 0;
@@ -50,6 +59,13 @@ module.exports = {
         log += `\n Support : ${bot.support.users.length}`;
         log += `\nPartners : ${partners}`;
 
+
+        log += `\n\nShadow's Role Play Game`;
+        log += `\n Version : ${srpg.version}`;
+        log += `\nCommands : ${srpg.cmds.size}`;
+        log += `\n\n   Users : n/a`;
+        log += `\nFactions : n/a`;
+
         console.log(log);
         console.log("\n---==☆ End Client ☆==---\n");
 
@@ -83,9 +99,9 @@ module.exports = {
             .setAuthor("Boot Log", bot.user.avatarURL)
             .setDescription(`\`\`\`css\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
 
-            bot.support.shadowServers.forEach(guild => {
-                ch = bot.channels.get(guild.support);
-                ch.send(e);
-            });
-    }
+        bot.support.shadowServers.forEach(guild => {
+            ch = bot.channels.get(guild.support);
+            ch.send(e);
+        });
+    },
 };
