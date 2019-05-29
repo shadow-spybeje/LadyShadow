@@ -46,6 +46,8 @@ module.exports = {
             bot.settings.g = new discord.Collection();
           //User Settings Files
             bot.settings.u = new discord.Collection();
+          //SRPG save location.
+            bot.srpg = new discord.Collection();
           //Bot Login Token.
             bot.token = require('../../../../.././tokens.json').LadyShadow;
           //timezone info -- cuz why not?

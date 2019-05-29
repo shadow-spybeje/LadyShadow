@@ -7,67 +7,86 @@ module.exports = {
 
     execute(bot){
 
-          //Connect to the SRPG,
-        async function bootSRPG(){
-            const SRPG = require('../../../../Shadow-RPG').execute();
-            srpg = SRPG;
+        //Connect to the SRPG,
+        function bootSRPG(){
+            const SRPG = require('../../../.././Shadow-RPG').execute();
+            bot.srpg = SRPG;
         };
-        bootSRPG();
+
+        function logger(){
+            srpg = bot.srpg;
+            console.log("---==☆ Client ☆==---\n");
+
+            let users = 0;
+            let bots = 0;
+
+            bot.users.forEach(user => {
+                if(user.bot){
+                    bots++
+                };
+            });
+
+            bot.guilds.forEach(g => {
+                users+=g.memberCount;
+            });
+
+            users = users - bots;
 
 
-        console.log("---==☆ Client ☆==---\n");
+            let rifts = 0;
+            let partners = 0;
 
-        let users = 0;
-        let bots = 0;
-
-        bot.users.forEach(user => {
-            if(user.bot){
-                bots++
-            };
-        });
-
-        bot.guilds.forEach(g => {
-            users+=g.memberCount;
-        });
-
-        users = users - bots;
+            bot.settings.g.forEach(g => {
+                if(g.partnered) partners++
+                if(g.rift) rifts++
+            });
 
 
-        let rifts = 0;
-        let partners = 0;
+            let log = [];
 
-        bot.settings.g.forEach(g => {
-            if(g.partnered) partners++
-            if(g.rift) rifts++
-        });
+            log += `    Name : ${bot.user.tag}`;
+            log += `\n      ID : ${bot.user.id}`;
+            log += `\n   Alpha : ${bot.system.alpha}`;
 
+            log += `\n\n  Guilds : ${bot.guilds.size}`;
+            log += `\nSettings : ${bot.settings.g.size}`;
+            log += `\n   Rifts : ${rifts}`;
+            log += `\n   Users : ${users}`;
+            log += `\nSettings : ${bot.settings.u.size}`;
+            log += `\n    Bots : ${bots}`;
 
-        let log = [];
-
-        log += `    Name : ${bot.user.tag}`;
-        log += `\n      ID : ${bot.user.id}`;
-        log += `\n   Alpha : ${bot.system.alpha}`;
-
-        log += `\n\n  Guilds : ${bot.guilds.size}`;
-        log += `\nSettings : ${bot.settings.g.size}`;
-        log += `\n   Rifts : ${rifts}`;
-        log += `\n   Users : ${users}`;
-        log += `\nSettings : ${bot.settings.u.size}`;
-        log += `\n    Bots : ${bots}`;
-
-        log += `\n\n  Owners : ${bot.support.owners.length}`;
-        log += `\n Support : ${bot.support.users.length}`;
-        log += `\nPartners : ${partners}`;
+            log += `\n\n  Owners : ${bot.support.owners.length}`;
+            log += `\n Support : ${bot.support.users.length}`;
+            log += `\nPartners : ${partners}`;
 
 
-        log += `\n\nShadow's Role Play Game`;
-        log += `\n Version : ${srpg.version}`;
-        log += `\nCommands : ${srpg.cmds.size}`;
-        log += `\n\n   Users : n/a`;
-        log += `\nFactions : n/a`;
+            log += `\n\nShadow's Role Play Game`;
+            log += `\n Version : ${srpg.version}`;
+            log += `\nCommands : ${srpg.cmds.size}`;
+            log += `\n\n   Users : n/a`;
+            log += `\nFactions : n/a`;
 
-        console.log(log);
-        console.log("\n---==☆ End Client ☆==---\n");
+            console.log(log);
+            console.log("\n---==☆ End Client ☆==---\n");
+
+
+            e = new discord.RichEmbed()
+            .setColor(bot.defaults.color)
+            .setAuthor("Boot Log", bot.user.avatarURL)
+            .setDescription(`\`\`\`css\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
+
+            bot.support.shadowServers.forEach(guild => {
+                ch = bot.channels.get(guild.support);
+                ch.send(e);
+            });
+        };
+
+
+        async function conLog(){
+            await bootSRPG();
+            await logger();
+        };
+        conLog();
 
 
 
@@ -93,15 +112,5 @@ module.exports = {
          * [3] Watching
          * • {type: ' '}
         */
-
-        e = new discord.RichEmbed()
-            .setColor(bot.defaults.color)
-            .setAuthor("Boot Log", bot.user.avatarURL)
-            .setDescription(`\`\`\`css\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
-
-        bot.support.shadowServers.forEach(guild => {
-            ch = bot.channels.get(guild.support);
-            ch.send(e);
-        });
     },
 };
