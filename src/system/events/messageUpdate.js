@@ -27,7 +27,7 @@ module.exports = {
 
           .addField("Author", `${newMessage.author.tag}  (${newMessage.author.id})`, true)
           .addField("Message ID", newMessage.id, true)
-          .addField("Message Channel", `<#${newMessage.channel.id}>`)
+          .addField("Channel", `<#${newMessage.channel.id}>`)
           .addField("Old Message", oContent)
           .addField("New Message", nContent)
 
