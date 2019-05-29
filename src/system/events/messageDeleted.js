@@ -8,7 +8,7 @@ module.exports = {
 
     execute(bot, message){
 
-      if(newMessage.channel.type != "text") return;
+      if(message.channel.type != "text") return;
         settings = bot.settings.g.get(message.guild.id);
         if(!settings.chatlog) return;
 
