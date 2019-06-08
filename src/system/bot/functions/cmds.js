@@ -15,7 +15,9 @@ module.exports = {
         let cmd = bot.cmds.general.get(cmdName) || bot.cmds.general.find(c => c.aliases && c.aliases.includes(cmdName));
         if(!cmd) cmd = bot.cmds.support.get(cmdName) || bot.cmds.support.find(c => c.aliases && c.aliases.includes(cmdName));
         if(!cmd) cmd = bot.cmds.owner.get(cmdName) || bot.cmds.owner.find(c => c.aliases && c.aliases.includes(cmdName));
+
         if(!cmd) return;
+
 
         let e = new discord.RichEmbed();
         e.setTitle(`${cmdName} Error`)
