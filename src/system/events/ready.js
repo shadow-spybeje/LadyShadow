@@ -7,15 +7,8 @@ module.exports = {
 
     execute(bot){
 
-        //Connect to the SRPG,
-        function bootSRPG(){
-            const SRPG = require('../../../.././Shadow-RPG').execute();
-            return SRPG;
-        };
-        bot.srpg = bootSRPG();
-
-
         srpg = bot.srpg;
+
         console.log("---==☆ Client ☆==---\n");
 
         let users = 0;
@@ -61,11 +54,13 @@ module.exports = {
         log += `\nPartners : ${partners}`;
 
 
+        /*
         log += `\n\nShadow's Role Play Game`;
         log += `\n Version : ${srpg.version}`;
-        log += `\nCommands : ${srpg.cmds.size}`;
+        log += `\nCommands : ${srpg.cmds.general.size}`;
         log += `\n\n   Users : n/a`;
         log += `\nFactions : n/a`;
+        */
 
         console.log(log);
         console.log("\n---==☆ End Client ☆==---\n");
@@ -89,7 +84,7 @@ module.exports = {
         //if(alpha) bot.user.setActivity(`as an Alpha.`, {type: "playing"});
         if(bot.system.alpha){
             bot.user.setStatus('idle');
-            bot.user.setActivity(`in Dev Mode. | ${bot.prefix.global}help`, { type: "Streaming", url: 'https://www.twitch.tv/scion_spy%22%7D'});
+            bot.user.setActivity(`in Dev Mode. | ${bot.prefix.global}help`, { type: "Streaming", url: 'https://www.twitch.tv/scion_spy'});
         };
 
         if(!bot.system.alpha){
