@@ -11,10 +11,13 @@ module.exports = {
     const ownerCmds = fs.readdirSync('./src/cmds/owner').filter(file => file.endsWith('.js'));
     const unloadedCmds = fs.readdirSync('./src/cmds/unloaded').filter(file => file.endsWith('.js'));
 
+    const srpgCmds = fs.readdirSync('./src/cmds/srpg').filter(file => file.endsWith('.js'));
+
     let general = [];
     let support = [];
     let owner = [];
     let unloaded = [];
+    let srpg = [];
 
     for (const file of generalCmds) { 	const cmd = require(`../../.././cmds/general/${file}`);
       bot.cmds.general.set(cmd.name, cmd);
@@ -33,9 +36,14 @@ module.exports = {
     unloaded.push(`[✪]`+cmd.name);
     };
 
-    array = general.concat(support.concat(owner))
+    for (const file of srpgCmds) { 	const cmd = require(`../../.././cmds/srpg/${file}`);
+    bot.cmds.srpg.set(cmd.name, cmd);
+    srpg.push(`[⚔]`+cmd.name);
+    };
+
+    array = general.concat(support.concat(owner.concat(srpg)))
     coma = ""; if(unloaded) coma = ", ";
 
-    console.log(`System:  Commands   :: Loaded : ${array.length} UnLoaded : ${unloaded.length} Type : [★] - Owner || [☆] - Support || [✪] - UnLoaded\n• • ${array.join(', ')}${coma}${unloaded.join(', ')}\n`)
+    console.log(`System:  Commands   :: Loaded : ${array.length} UnLoaded : ${unloaded.length} Type : [★] - Owner || [☆] - Support || [🗡] - S.RPG || [✪] - UnLoaded\n• • ${array.join(', ')}${coma}${unloaded.join(', ')}\n`)
   }
 };
