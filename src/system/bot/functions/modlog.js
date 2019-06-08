@@ -13,11 +13,13 @@ module.exports = {
             case("kick"):
             case("ban"):
             case("hack-ban"):
+            case("blacklist"):
             case("mute"):
               color = "ff0000";
             break;
             case("unban"):
             case("unmute"):
+            case("whitelist"):
               color = "GREEN";
             break;
             default:
