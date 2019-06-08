@@ -22,6 +22,7 @@ module.exports = {
 
 
         let p = bot.prefix; let gPrefix = p.global; let oPrefix = p.owner;
+        let blacklist = bot.config.client.blacklist;
 
         /*
         let settings = "";
@@ -58,6 +59,7 @@ module.exports = {
         //if(message.content.startsWith(settings.prefix)) prefix = settings.prefix;
         if(message.content.startsWith(gPrefix)) prefix = gPrefix;
         if(message.content.startsWith(oPrefix)) prefix = oPrefix;
+        //if(message.content.startsWith("<@347872963636494337>")) prefix = message.guild.members.get(bot.user.id).displayname;
         if(!prefix) return;
 
 
@@ -65,6 +67,8 @@ module.exports = {
         //----------
 
         if(message.author.bot) return;
+        const bl = blacklist.some(id => { if(message.author.id == id) return true; });
+        if(bl == true) return message.channel.send(`I'm sorry *\`Not Sorry\`* however I've been told to ignore your input.\n  Goodbye!!\`\`\`css\nYou've been blacklisted from use of this bot.\`\`\``);
 
         if(dm == true){
           if(!message.content.startsWith(prefix)) return;
