@@ -25,6 +25,7 @@ module.exports = {
     bot.cmds.help.owner = new discord.Collection();
     bot.cmds.help.partner = new discord.Collection();
     bot.cmds.help.patreon = new discord.Collection();
+    bot.cmds.help.srpg = new discord.Collection();
 
 
     bot.cmds.general.forEach(cmd => {
@@ -34,15 +35,18 @@ module.exports = {
       if(cmd.help == "owner") bot.cmds.help.owner.set(cmd.name, cmd);
       if(cmd.help == "partner") bot.cmds.help.partner.set(cmd.name, cmd);
       if(cmd.help == "patreon") bot.cmds.help.patreon.set(cmd.name, cmd);
+
+      if(cmd.help == "srpg") bot.cmds.help.srpg.set(cmd.name, cmd);
     });
 
 
     const cmdsGeneral = bot.cmds.help.general;
-    const cmdsMod =bot.cmds.help.mod;
-    const cmdsAdmin =bot.cmds.help.admin;
-    const cmdsOwner =bot.cmds.help.owner;
-    const cmdsPartner =bot.cmds.help.partner;
+    const cmdsMod = bot.cmds.help.mod;
+    const cmdsAdmin = bot.cmds.help.admin;
+    const cmdsOwner = bot.cmds.help.owner;
+    const cmdsPartner = bot.cmds.help.partner;
     const cmdsPatreon = bot.cmds.help.patreon;
+    const cmdsSrpg = bot.cmds.help.srpg;
 
     const cmdsSupport = bot.cmds.support;
     const cmdsDev = bot.cmds.owner;
@@ -81,7 +85,7 @@ module.exports = {
     if(args.length == 0){
       e.setTitle(`Help Categories`);
       e.setColor(color);
-      e.setDescription(`\`\`\`css\n [General] : <10 | general>\n     [Mod] : <7 | mod>\n   [Admin] : <6 | admin>\n   [Owner] : <5 | owner>\`\`\``);
+      e.setDescription(`\`\`\`css\n [General] : <10 | general>\n   [S.RPG] : <9 | srpg>\n     [Mod] : <7 | mod>\n   [Admin] : <6 | admin>\n   [Owner] : <5 | owner>\`\`\``);
       e.setFooter(`${prefix}help <category> | ${prefix}help other`);
       return ch.send(e).then(msg => {
           if(dmhelp){
@@ -103,6 +107,11 @@ module.exports = {
         case("10"):
           cat = "General";
           cmds = cmdsGeneral;
+        break;
+        case("srpg"):
+        case("9"):
+          cat = "S.RPG";
+          cmds = cmdsSrpg;
         break;
         case("mod"):
         case("7"):
