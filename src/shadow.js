@@ -2,7 +2,7 @@
  * {HSF}LadyShadow#7111
  *  Alpha - v.4.0.0
  *  Feburary 25'th, 2019
- *  Devd by : ScionSpy & Bejabjay
+ *  Devd by : ScionSpy & Bejebajay
 */
 
 console.log(`\n\n\n---==☆ System Boot-Up ☆==---\n`);
