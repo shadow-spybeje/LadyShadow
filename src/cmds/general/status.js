@@ -8,6 +8,8 @@ module.exports = {
 
   execute(message){
     const bot = message.client;
+    const stpg = bot.srpg;
+
     e = new discord.RichEmbed();
     /*
       Name
@@ -36,18 +38,29 @@ module.exports = {
     let owner = bot.cmds.owner.size;
     let unloaded = bot.cmds.unloaded.size;
 
+    let sGen = bot.cmds.srpg.size;
+    //let sAdm = srpg.cmds.admin.size;
+    //let sUn = srpg.cmds.unloaded.size;
+
     let cmds = general+support+owner;
+    let sCmds = sGen
 
 
    dV = require('../../.././node_modules/discord.js/package.json').version;
    sV = require('../../.././package.json').version;
+   rpgV = require('.././srpg/package.json').version;
 
    e.setTitle(`${bot.user.tag}'s`);
    e.setThumbnail(`${bot.user.avatarURL}'s`);
    e.setColor(bot.settings.g.get(message.guild.id).color);
+
    e.addField("Info",`\`\`\`css\nGuilds : ${bot.guilds.size}\n\ Users : ${users}\n\ \ Bots : ${bots}\`\`\``, true)
    e.addField("Commands", `\`\`\`css\n  Loaded : ${cmds}\n General : ${general}\nUnloaded : ${unloaded}\`\`\``, true);
-   e.addField("Versions", `\`\`\`css\nDiscord.js : ${dV}\n\ \ \ \ Shadow : ${sV}a\`\`\``, true);
+
+   e.addField("SRPG",`\`\`\`css\n\ \ \ Users : n\\a\nFactions : n\\a\`\`\``, true);
+   e.addField("Commands", `\`\`\`css\n  Loaded : ${sCmds}`+/*\n General : ${sGen}\nUnloaded : ${sUn}*/+`\`\`\``, true);
+
+   e.addField("Versions", `\`\`\`css\nDiscord.js : ${dV}\n\ \ \ \ Shadow : ${sV}a\nShadow RPG : ${rpgV}a\`\`\``, true);
    e.addField("Support", `\`\`\`css\n\ Owners : ${bot.support.owners.length}\nSupport : ${bot.support.users.length}\`\`\``, true);
 
 
