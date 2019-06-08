@@ -51,7 +51,10 @@ module.exports = {
 
             msg.edit(args.join(' ')).then(m => {
                 e.setTitle("Msg.Edit - Message Edited");
-                return message.channel.send(e);
+                return message.channel.send(e).then(mm => {
+                    mm.delete(5000);
+                    message.delete();
+                });
             })
         })
         .catch(console.error);
