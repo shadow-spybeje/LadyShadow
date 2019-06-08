@@ -1,0 +1,10 @@
+{
+  "name": "shadow-rpg",
+  "version": "2.0.0",
+  "alpha": true,
+  "description": "Shadow.Role.Play.Game",
+  "author": "ScionSpy#1904 && Bejabajay#1904.",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}

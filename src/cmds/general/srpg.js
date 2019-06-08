@@ -1,20 +1,65 @@
+/*function bootSRPG(){
+  const SRPG = require('../../../.././Shadow-RPG').execute();
+  return SRPG;
+};*/
+
 module.exports = {
     coded : "2019-05-28",
     name : "srpg",
-    description : "The bridge cmd into the SRPG Module.",
-    usage : "",
+    description : "The bridge cmd into the SRPG.",
+    usage : "help | srpg <cmd>",
+    args : true,
 
-    execute(message){
+    help : 'srpg',
+
+    execute(message, args){
         bot = message.client;
-        srpg = bot.srpg;
 
-        e = new discord.RichEmbed()
-          .setTitle("S.RPG")
-          .setFooter(bot.functions.get('date').execute(Date.now()))
-          .setColor(bot.settings.g.get(message.guild.id).color)
-          .setAuthor(bot.users.get(bot.support.owners[0]).tag, bot.users.get(bot.support.owners[0].avatarURL))
-          .setDescription(`Thank you for trying to use The SRPG, however we're still working on connecting the S.RPG Module to Shadow.\n  This is moving along nicely, and will enable 2 bots to use the s.RPG simultaneously, and seemlessly.\n\n  For more info, you can join the support server, \`${bot.settings.g.get(message.guild.id).prefix}invite\` and ping me or the \`@Support\` team.\n  GitHub @ [Shadow-SpyBeje/Shadow-RPG](https://github.com/shadow-spybeje/Shadow-RPG)\n\n\`\`\`css\nS.RPG Info\n Version : ${srpg.version}\nCommands : ${srpg.cmds.size}\`\`\``);
+      //NEW S.RPG
+        cmdName = args.shift();
+        cmd = bot.cmds.srpg.get(cmdName.toLowerCase()) || bot.cmds.srpg.find(c => c.aliases && c.aliases.includes(cmdName));
+        if(!cmd) return;
 
-        message.channel.send(e);
+
+        let e = new discord.RichEmbed();
+        e.setTitle(`${cmdName} Error`)
+        e.setColor("ff0000")
+
+
+          //Args
+        if (cmd.args && !args.length){
+            let reply = `**Arguments**\n• You didn't provide any arguments!`;
+
+            //Usage
+            if (cmd.usage){
+            reply += `\n\n**Usage**\n• The proper usage would be: \`${prefix}${cmd.name} ${cmd.usage}\``;
+
+            e.setDescription(reply)
+            return message.channel.send(e);
+            };
+        };
+
+          //guildOnly
+        if (cmd.guildOnly && message.channel.type !== 'text'){
+            e.setDescription("**Guild Only**\n• This Command can only be used Server-Side.")
+            return message.channel.send(e);
+        };
+
+          //Admin?
+        if(cmd.admin){
+
+            if(!bot.support.owners.includes(message.author.id)){
+                e.setDescription("**Admin Only**\n• This is an Admin Only command.");
+                return message.channel.send(embedError);
+            };
+        };
+
+        try {
+            cmd.execute(message, args);
+        } catch (error) {
+            //console.log(error);
+            message.channel.send(bot.functions.get("err").execute(message, error));
+            message.reply(`there was an error trying to execute \`${cmdName}\`!!`);
+        };
     }
 }
