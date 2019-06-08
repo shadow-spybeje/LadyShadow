@@ -1,7 +1,8 @@
 module.exports = {
     coded : "2019-04-05",
     name : "date",
-    
+    usage : "bot.functions.get('date').execute(Date.now())",
+
     execute(time) {
         date = (time) => {
             d = new Date();
@@ -13,14 +14,14 @@ module.exports = {
             HH = `${d.getHours(time)}`;
             MM = `${d.getMinutes(time)}`;
             SS = `${d.getSeconds(time)}`;
-          
-            
+
+
           //If our Hour, Minute, or Second is in the "ones" add a zero before the number.
             if(HH.length == 1) HH = `0${HH}`;
             if(MM.length == 1) MM = `0${MM}`;
             if(SS.length == 1) SS = `0${SS}`;
 
-            
+
           //Lets set our TimeZone to Pacific Time.
             pstDay = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
             pdtDay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
@@ -35,7 +36,7 @@ module.exports = {
                     zone = " PST(-8.GMT)";
 
                     if(mm == 11 && dd == 1 || dd == 2) zone = " PDT(-7.GMT)";
-                    if(mm == 3 && pdtDay.includes(dd)) zone = " PDT(-7.GMT)";                    
+                    if(mm == 3 && pdtDay.includes(dd)) zone = " PDT(-7.GMT)";
                 break;
                 case(3):
                 case(4):
