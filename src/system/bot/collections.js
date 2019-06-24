@@ -78,6 +78,14 @@ module.exports = {
         };
 
 
+        function tos(bot){
+          //Begin ToS.
+          bot.tos = new discord.Collection();
+            //Role Cards.
+          bot.tos.roleCards = require(`./other/tosRoleCards.js`).roleCards;
+        };
+
+
         function srpg(bot){
           //Begin S.RPG.
           bot.srpg = new discord.Collection();
@@ -92,7 +100,7 @@ module.exports = {
             bot.srpg.settings.factions = new discord.Collection();
           //S.RPG Clan Settings.
             bot.srpg.settings.clans = new discord.Collection();
-        }
+        };
 
 
         /**
@@ -149,6 +157,7 @@ module.exports = {
         async function runFile(bot, fs){
           await general(bot);
           await support(bot);
+          await tos(bot);
           await srpg(bot);
           await system(bot);
           await collect(bot, fs);
