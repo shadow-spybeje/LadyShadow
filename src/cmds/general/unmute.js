@@ -52,7 +52,7 @@ module.exports = {
 
         if(!message.guild.roles.map(r => r.id == settings.muted) && !message.guild.roles.map(r => r.name.toLowerCase() == "muted")) return message.channel.send("You do not have a __`Muted`__ role.");
 
-        if(!target.roles.get(settings.muted) && target.roles.map(r => r.name == "muted" || r.name == "Muted")) return message.channel.send("User is not muted.");
+        if(!target.roles.get(settings.muted) && !target.roles.map(r => r.name == "muted" || r.name == "Muted")) return message.channel.send("User is not muted.");
 
         let role = "";
         role = message.guild.roles.get(settings.muted);
