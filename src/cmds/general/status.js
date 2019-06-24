@@ -48,7 +48,8 @@ module.exports = {
 
    dV = require('../../.././node_modules/discord.js/package.json').version;
    sV = require('../../.././package.json').version;
-   rpgV = require('.././srpg/package.json').version;
+   rpgV = require('.././srpg/docs/package.json').version;
+
 
    e.setTitle(`${bot.user.tag}'s`);
    e.setThumbnail(`${bot.user.avatarURL}'s`);
@@ -58,7 +59,7 @@ module.exports = {
    e.addField("Commands", `\`\`\`css\n  Loaded : ${cmds}\n General : ${general}\nUnloaded : ${unloaded}\`\`\``, true);
 
    e.addField("SRPG",`\`\`\`css\n\ \ \ Users : n\\a\nFactions : n\\a\`\`\``, true);
-   e.addField("Commands", `\`\`\`css\n  Loaded : ${sCmds}`+/*\n General : ${sGen}\nUnloaded : ${sUn}*/+`\`\`\``, true);
+   e.addField("Commands", `\`\`\`css\n  Loaded : ${sCmds}\n\`\`\``, true);
 
    e.addField("Versions", `\`\`\`css\nDiscord.js : ${dV}\n\ \ \ \ Shadow : ${sV}a\nShadow RPG : ${rpgV}a\`\`\``, true);
    e.addField("Support", `\`\`\`css\n\ Owners : ${bot.support.owners.length}\nSupport : ${bot.support.users.length}\`\`\``, true);

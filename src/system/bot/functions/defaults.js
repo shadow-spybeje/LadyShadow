@@ -5,13 +5,14 @@ module.exports = {
 
     name : "default",
     description : "This is the default Settings files for both new Guilds and Users.",
-    usage : "bot.functions.get('default').execute('<Guild || User>', guild/user, bot)",
+    usage : "bot.functions.get('default').execute('<Guild || User || SrpgUser || SrpgFaction || SrpgClan>', guild/user, bot)",
 
     execute(type, info, bot){
 
         //pathFinder = require(`../../../../../.././bot_db/ladyShadow/settings`)
         fsPathGuild = `.././bot_db/ladyShadow/settings/guilds/`;
         fsPathUser = `.././bot_db/ladyShadow/settings/users/`;
+        fsPathSrpg = `.././bot_db/srpg/`;//<users || factions || clans>
 
 
 
@@ -57,6 +58,24 @@ module.exports = {
             //
         };
 
+        function srpgUser(user, bot){
+            //
+        };
+
+        function srpgFaction(faction, bot){
+            //
+        };
+
+        function srpgClan(clan, bot){
+            file = {
+              "id" : `${clan.id}`,
+            }
+
+            json = JSON.stringify(file);
+            fs.writeFileSync(`../.././bot_db/srpg/clans/${clan.id}.json`, json)
+            bot.srpg.settings.clans.set(clan.id, file);
+        };
+
 
 
         switch(type){
@@ -65,6 +84,15 @@ module.exports = {
             break;
             case("user"):
                 user(info, bot);
+            break;
+            case("srpguser"):
+                user(info, bot);
+            break;
+            case("srpgfaction"):
+                faction(info, bot);
+            break;
+            case("srpgclan"):
+                clan(info, bot);
             break;
         };
     }

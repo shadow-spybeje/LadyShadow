@@ -17,28 +17,45 @@ module.exports = {
        */
 
 
-        //----------
-        //----------
+      //----------
+      //----------
 
 
         let p = bot.prefix; let gPrefix = p.global; let oPrefix = p.owner;
         let blacklist = bot.config.client.blacklist;
 
-        /*
+
         let settings = "";
         if(message.channel.type === 'text'){
-          //settings = require(`./System/Settings/Guilds/${message.guild.id}.json`);
 
-          if(!settings){
+          if(!bot.settings.g.has(message.guild.id)){
+            message.channel.send("You're server seems to have eluded my Mages..\nPlease contact one of our Support members to bring your server back into focus.");
+
+
             g = message.guild;
             u = message.guild.owner.user;
             msg = `No settings file located for:\`\`\`css\n\ \ \ \ ID : ${g.id}\n\ Guild : ${g.name}\n\ Owner : ${u.tag}\n\ \ U.ID : ${u.id}\nJoined : ${g.members.get(bot.user.id).joinedAt}\`\`\``;
 
             owners.forEach(o => {
-              //bot.users.get(o).send(msg);
+              bot.users.get(o).send(msg);
             });
-          }
-          */
+
+            return;
+          };
+
+          settings = bot.settings.g.get(message.guild.id);
+
+
+          //Launch "Censor" handler.
+        //bot.functions.get('censor').execute(message);
+          //Launch "Rift" handler. // Negates Cmd Function.
+        if(message.channel.id == settings.rift) return bot.functions.get('rift').execute(message);
+
+        };
+
+
+        if(!settings) return console.log(`No Settings!! || ID - ${message.guild.id}`);
+
 
 
           //Identify Prefix.
@@ -66,7 +83,7 @@ module.exports = {
         //----------
         //----------
 
-        if(message.author.bot) return;
+        if(message.author.bot) if(message.author.id != "568883858427346974") return;
         const bl = blacklist.some(id => { if(message.author.id == id) return true; });
         if(bl == true) return message.channel.send(`I'm sorry *\`Not Sorry\`* however I've been told to ignore your input.\n  Goodbye!!\`\`\`css\nYou've been blacklisted from use of this bot.\`\`\``);
 
@@ -79,10 +96,9 @@ module.exports = {
         //----------
 
 
-        /*if (!message.channel.permissionsFor(bot.user.id).has('SEND_MESSAGES')) {
-            return message.author.send(`I cannot post in ${message.channel.name},\nI do not have the \`SEND_MESSAGES\` permssion.`)
-              .catch(() => { return; });
-        };*/
+
+        if(!message.guild.member(bot.user.id).permissions.has("SEND_MESSAGES")) return message.author.send(`I cannot post in ${message.channel.name},\nI do not have the \`SEND_MESSAGES\` permssion.`).catch(() => { return; });
+
 
 
         //----------
@@ -91,10 +107,5 @@ module.exports = {
 
       //Launch "Command" handler.
         bot.functions.get('cmds').execute(message, prefix);
-      //Launch "Censor" handler.
-        //bot.functions.get('censor').execute(message);
-      //Launch "Rift" handler.
-        //bot.functions.get('rift').execute(message)
-
     }
 };

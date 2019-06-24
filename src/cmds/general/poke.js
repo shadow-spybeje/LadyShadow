@@ -11,6 +11,8 @@ module.exports = {
   help : "general",
 
   execute(message, args){
+    bot = message.client;
+    
     let member = "";
     member = message.mentions.members.first();
     if(!member) message.guild.members.get(args[0]);

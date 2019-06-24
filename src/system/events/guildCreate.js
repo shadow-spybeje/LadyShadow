@@ -29,7 +29,7 @@ module.exports = {
             .setThumbnail(guild.iconURL)
             .setFooter(`Joined a Guild || `+bot.functions.get('date').execute(Date.now()), bot.user.avatarURL)
             .setColor("GREEN")
-            .setDescription(`\`\`\`css\n---==☆ New Guild ☆==---\`\`\`\`\`\`css\nGuild ID : ${guild.id}\n Members : ${users}\n    Bots : ${bots}\n Created : ${guild.createdAt})\`\`\``)
+            .setDescription(`\`\`\`css\n---==☆ New Guild ☆==---\`\`\`\`\`\`css\nGuild ID : ${guild.id}\nM.Count : ${guild.memberCount}\n\n---==+ Cached +==---\n Members : ${users}\n    Bots : ${bots}\n\n Created : ${guild.createdAt})\`\`\``)
 
 
 

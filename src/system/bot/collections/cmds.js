@@ -11,7 +11,7 @@ module.exports = {
     const ownerCmds = fs.readdirSync('./src/cmds/owner').filter(file => file.endsWith('.js'));
     const unloadedCmds = fs.readdirSync('./src/cmds/unloaded').filter(file => file.endsWith('.js'));
 
-    const srpgCmds = fs.readdirSync('./src/cmds/srpg').filter(file => file.endsWith('.js'));
+    const srpgCmds = fs.readdirSync('./src/cmds/srpg/cmds').filter(file => file.endsWith('.js'));
 
     let general = [];
     let support = [];
@@ -36,7 +36,7 @@ module.exports = {
     unloaded.push(`[✪]`+cmd.name);
     };
 
-    for (const file of srpgCmds) { 	const cmd = require(`../../.././cmds/srpg/${file}`);
+    for (const file of srpgCmds) { 	const cmd = require(`../../.././cmds/srpg/cmds/${file}`);
     bot.cmds.srpg.set(cmd.name, cmd);
     srpg.push(`[⚔]`+cmd.name);
     };

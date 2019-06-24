@@ -34,8 +34,8 @@ module.exports = {
             "general" : bot.cmds.general,
             "support" : bot.cmds.support,
             "owner" : bot.cmds.owner,
-            "unloaded" : bot.cmds.unloaded
-        }
+            "unloaded" : bot.cmds.unloaded,
+        };
 
         if (args.length >= 2){
             if(!categories[cat].has(cmd)) {

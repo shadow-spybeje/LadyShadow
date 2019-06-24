@@ -26,8 +26,6 @@ module.exports = {
             bot.cmds.support = new discord.Collection();
           //Owner Commands.
             bot.cmds.owner = new discord.Collection();
-          //S.RPG Commands.
-            bot.cmds.srpg = new discord.Collection();
           //Unloaded Commands.
             bot.cmds.unloaded = new discord.Collection();
           //shadows collections, used to populate these collections.
@@ -78,6 +76,23 @@ module.exports = {
 
             return bot;
         };
+
+
+        function srpg(bot){
+          //Begin S.RPG.
+          bot.srpg = new discord.Collection();
+          //S.RPG Commands.
+            bot.cmds.srpg = new discord.Collection();
+
+          //S.RPG Settings.
+            bot.srpg.settings = new discord.Collection();
+          //S.RPG User Settings.
+            bot.srpg.settings.users = new discord.Collection();
+          //S.RPG Faction Settings.
+            bot.srpg.settings.factions = new discord.Collection();
+          //S.RPG Clan Settings.
+            bot.srpg.settings.clans = new discord.Collection();
+        }
 
 
         /**
@@ -134,6 +149,7 @@ module.exports = {
         async function runFile(bot, fs){
           await general(bot);
           await support(bot);
+          await srpg(bot);
           await system(bot);
           await collect(bot, fs);
           await bot.collections.forEach(collection => {

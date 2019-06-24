@@ -31,7 +31,7 @@ module.exports = {
             .setThumbnail(guild.iconURL)
             .setFooter(`Left a Guild || `+bot.functions.get('date').execute(Date.now()), bot.user.avatarURL)
             .setColor("RED")
-            .setDescription(`\`\`\`css\n---==☆ Old Guild ☆==---\`\`\`\`\`\`css\nGuild ID : ${guild.id}\n Members : ${users}\n    Bots : ${bots-1}\n Joined : ${joined})\`\`\``)
+            .setDescription(`\`\`\`css\n---==☆ Old Guild ☆==---\`\`\`\`\`\`css\nGuild ID : ${guild.id}\nM.Count : ${guild.memberCount}\n\n---==+ Cached +==---\n Members : ${users}\n    Bots : ${bots-1}\n Joined : ${joined})\`\`\``)
 
 
 

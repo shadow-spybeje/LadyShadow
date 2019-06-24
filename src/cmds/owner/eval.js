@@ -18,18 +18,25 @@ module.exports = {
 
     //Define eval phrases
 
-      const bot = message.client;
       const discord = require('discord.js');
       const fs = require('fs');
+
       const e = new discord.RichEmbed();
+      const bot = message.client;
+      var prefix = bot.prefix;
+      var config = bot.config;
 
       var owners = []; bot.support.owners.forEach(owner => owners.push(owner+" | "+bot.users.get(owner).tag));
       var support = []; bot.support.users.forEach(user => support.push(user+" | "+bot.users.get(user).tag));
 
-      var settings = bot.settings.g.get(message.guild.id);
+      if(message.channel.type == "text"){
+        settings = bot.settings.g.get(message.guild.id);
+      } else{
+        settings = "";
+      };
+
       var prefixes = bot.prefix
       if(settings) var prefix = settings.prefix;
-      if(!settings) var prefix = "No Prefix Found.\n`(Lack of SETTINGS file)`"
 
 
     //----------

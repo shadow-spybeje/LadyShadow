@@ -10,9 +10,10 @@ module.exports = {
         bot = message.client;
 
         const embed = new discord.RichEmbed()
-          .setTitle("Whoops!! That's an Error!!")
+          .setTitle("Whoops!! That's an Error!!\nPlease report this to the Support Team!!")
+          .setFooter("Info: Command, args, error message.")
           .setColor("ff0000")
-          .setDescription(`\`\`\`xl\n${err}\`\`\``)
+          .setDescription(`\`\`\`css\n${err.stack}\`\`\``)
 
         time = bot.functions.get("date").execute(Date.now());
         if(message.guild){
