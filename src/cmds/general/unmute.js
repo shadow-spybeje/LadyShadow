@@ -9,7 +9,7 @@ module.exports = {
 
     execute(message, args){
 
-        devMode = false;
+        devMode = true;
 
         bot = message.client;
         settings = bot.settings.g.get(message.guild.id);
@@ -36,33 +36,39 @@ module.exports = {
         if(devMode == false) return end(message);
 
 
-        target = args.shift().replace("/[<@!>]/g", "");
-        message.channel.send("Target - "+target)
+        let target = "";
+        if(message.mentions.members){
+            target = message.mentions.members.first().id;
+        } else {
+            target = args[0];
+        };
 
 
-        message.guild.fetchMember(target).then(target => {
-            if(!message.guild.roles.map(r => r.id == settings.muted) && !message.guild.roles.map(r => r.name.toLowerCase() == "muted")) return message.channel.send("You do not have a __`Muted`__ role.");
+        if(!message.guild.members.get(target)) return message.channel.send("User not found!!\nPerhaps they're not on the server?\n`R.I.P.`");
+        target = message.guild.members.get(target); args.shift();
 
-            if(!target.roles.map(r => r.id == settings.muted) && !target.roles.map(r => r.name.toLowerCase() == "muted")) return message.channel.send("User is not muted.");
+        reason = args.join(' ');
+        if(!reason) reason = `Unmuted by: ${message.author.tag} (${message.author.id})`;
 
-            let role = "";
-            role = message.guild.roles.map(r => r.id == settings.muted);
-            if(!role) role = message.guild.roles.find(r => r.name.toLowerCase() == "muted");
+        if(!message.guild.roles.map(r => r.id == settings.muted) && !message.guild.roles.map(r => r.name.toLowerCase() == "muted")) return message.channel.send("You do not have a __`Muted`__ role.");
 
-            message.member.removeRole(role, reason).then(user => {
-                return message.channel.send(`User ${user.tag} has been unmuted`)
+        if(!target.roles.get(settings.muted) && target.roles.map(r => r.name == "muted" || r.name == "Muted")) return message.channel.send("User is not muted.");
 
-            }).catch(e => {
-                if(e.message == "Missing Permissions") {
-                    return message.channel.send(`I can not unmute that person as I lack the permission to do so.\n\nDoes the target have a higher role than i do? (Are they the server owner??)`)
+        let role = "";
+        role = message.guild.roles.get(settings.muted);
+        if(!role) role = message.guild.roles.find(r => r.name.toLowerCase() == "muted");
 
-                } else {
-                    return message.channel.send(`An unknown error has occured.`)
+        target.removeRole(role, reason).then(target => {
+            return message.channel.send(`__**${target.user.tag}**__ has been unmuted`)
 
-                }
-            })
-        }).catch(() => {
-            return message.channel.send("User not found.\n*Perhaps they're not on the server.*")
-        })
+        }).catch(e => {
+            if(e.message == "Missing Permissions") {
+                return message.channel.send(`I can not unmute that person as I lack the permission to do so.\n\nDoes the target have a higher role than i do? (Are they the server owner??)`)
+
+            } else {
+                return message.channel.send(`An unknown error has occured.`)
+
+            }
+        });
     },
 };
