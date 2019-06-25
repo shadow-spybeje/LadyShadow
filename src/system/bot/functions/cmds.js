@@ -24,6 +24,21 @@ module.exports = {
         e.setColor("ff0000")
 
 
+          //Owner?
+          if(cmd.owner){
+
+            if(!bot.support.owners.includes(message.author.id)){
+              e.setDescription("**Developer Only**\n• This is a Developer Only `(config.perms[0])` command.");
+              return message.channel.send(e);
+            };
+          };
+
+            //guildOnly
+          if (cmd.guildOnly && message.channel.type !== 'text'){
+              e.setDescription("**Guild Only**\n• This Command can only be used Server-Side.")
+              return message.channel.send(e);
+          };
+
           //Args
         if (cmd.args && !args.length){
             let reply = `**Arguments**\n• You didn't provide any arguments!`;
@@ -34,21 +49,6 @@ module.exports = {
 
             e.setDescription(reply)
             return message.channel.send(e);
-            };
-        };
-
-          //guildOnly
-        if (cmd.guildOnly && message.channel.type !== 'text'){
-            e.setDescription("**Guild Only**\n• This Command can only be used Server-Side.")
-            return message.channel.send(e);
-        };
-
-          //Owner?
-        if(cmd.owner){
-
-            if(!bot.support.owners.includes(message.author.id)){
-                e.setDescription("**Developer Only**\n• This is a Developer Only `(config.perms[0])` command.");
-                return message.channel.send(embedError);
             };
         };
 
