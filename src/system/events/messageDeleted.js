@@ -15,6 +15,7 @@ module.exports = {
         content = message.content;
         if(!content) content = "No content to display.\nThis is either due to the message only containing an attachment, or an embed.";
 
+        if(content.length > 1024) content = "Char limit exceeded `1024 Chars`";
 
         let e = new discord.RichEmbed()
           .setTitle("Message Deleted")

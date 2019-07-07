@@ -20,6 +20,9 @@ module.exports = {
         if(oContent == "") oContent = "`oldMessage.content` was empty.";
         if(nContent == "") nContent = "`newMessage.content` is empty.";
 
+        if(oContent.length > 1024) oContent = "`oldMessage.content.length` was over `1024Chars`";
+        if(nContent.length > 1024) nContent = "`newMessage.content.length` was over `1024Chars`";
+
         let e = new discord.RichEmbed()
           .setTitle("Message Edited")
           .setColor("663399")
@@ -27,7 +30,8 @@ module.exports = {
 
           .addField("Author", `${newMessage.author.tag}  (${newMessage.author.id})`, true)
           .addField("Message ID", newMessage.id, true)
-          .addField("Channel", `<#${newMessage.channel.id}>`)
+          .addField("Channel", `<#${newMessage.channel.id}>`, true)
+          .addField("Message Link", `[Click Me!](${newMessage.url})`, true)
           .addField("Old Message", oContent)
           .addField("New Message", nContent)
 
