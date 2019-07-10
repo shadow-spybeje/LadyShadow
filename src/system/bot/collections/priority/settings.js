@@ -47,7 +47,7 @@ module.exports = {
           const userFiles = fs.readdirSync('../.././bot_db/srpg/clans').filter(file => file.endsWith('.json'));
 
           for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/clans/${file}`);
-            bot.srpg.factions.set(settings.id, settings);
+            bot.srpg.clans.set(settings.id, settings);
           };
         };
 
