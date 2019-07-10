@@ -80,26 +80,29 @@ module.exports = {
 
         function tos(bot){
           //Begin ToS.
-          bot.tos = new discord.Collection();
-            //Role Cards.
-          bot.tos.roleCards = require(`./other/tosRoleCards.js`).roleCards;
+            bot.tos = new discord.Collection();
+          //Role Cards.
+            bot.tos.roleCards = require(`./other/tosRoleCards.js`).roleCards;
         };
 
 
         function srpg(bot){
           //Begin S.RPG.
-          bot.srpg = new discord.Collection();
+            bot.srpg = new discord.Collection();
           //S.RPG Commands.
             bot.cmds.srpg = new discord.Collection();
 
-          //S.RPG Settings.
-            bot.srpg.settings = new discord.Collection();
+          //S.RPG Items.
+            bot.srpg.items = require(`../../cmds/srpg/system/srpgItems.js`).items;
+          //S.RPG Classes.
+            bot.srpg.classes = require(`../../cmds/srpg/system/srpgClasses.js`).classes;
+
           //S.RPG User Settings.
-            bot.srpg.settings.users = new discord.Collection();
+            bot.srpg.users = new discord.Collection();
           //S.RPG Faction Settings.
-            bot.srpg.settings.factions = new discord.Collection();
+            bot.srpg.factions = new discord.Collection();
           //S.RPG Clan Settings.
-            bot.srpg.settings.clans = new discord.Collection();
+            bot.srpg.clans = new discord.Collection();
         };
 
 
