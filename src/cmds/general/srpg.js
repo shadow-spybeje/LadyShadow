@@ -13,7 +13,11 @@ module.exports = {
     help : 'srpg',
 
     execute(message, args){
-        bot = message.client;
+        let bot = message.client;
+        let settings = bot.settings.g.get(message.guild.id);
+        let prefix = settings.prefix;
+        if(!prefix) prefix = bot.prefix.global;
+
 
       //NEW S.RPG
         cmdName = args.shift();
@@ -32,7 +36,7 @@ module.exports = {
 
             //Usage
             if (cmd.usage){
-            reply += `\n\n**Usage**\n• The proper usage would be: \`${prefix}${cmd.name} ${cmd.usage}\``;
+            reply += `\n\n**Usage**\n• The proper usage would be: \`${prefix}srpg ${cmd.name} ${cmd.usage}\``;
 
             e.setDescription(reply)
             return message.channel.send(e);
