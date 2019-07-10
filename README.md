@@ -17,4 +17,4 @@
 
 [Src](https://github.com/shadow-spybeje/LadyShadow/blob/master/src/README.md) -- Code
 
-[SRPG](https://github.com/shadow-spybeje/Shadow-RPG) -- Shadow's RPG [V.2]
+[SRPG](https://github.com/shadow-spybeje/LadyShadow/tree/master/src/cmds/srpg ) -- Shadow's RPG [V.2]
