@@ -28,26 +28,26 @@ module.exports = {
 
 
         function sUsers(bot, fs){
-          const userFiles = fs.readdirSync('../.././bot_db/srpg/settings/users').filter(file => file.endsWith('.json'));
+          const userFiles = fs.readdirSync('../.././bot_db/srpg/users').filter(file => file.endsWith('.json'));
 
-          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/settings/users/${file}`);
-            bot.srpg.settings.users.set(settings.id, settings);
+          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/users/${file}`);
+            bot.srpg.users.set(settings.id, settings);
           };
         };
 
         function sFactions(bot, fs){
-          const userFiles = fs.readdirSync('../.././bot_db/srpg/settings/factions').filter(file => file.endsWith('.json'));
+          const userFiles = fs.readdirSync('../.././bot_db/srpg/factions').filter(file => file.endsWith('.json'));
 
-          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/settings/factions/${file}`);
-            bot.srpg.settings.factions.set(settings.id, settings);
+          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/factions/${file}`);
+            bot.srpg.factions.set(settings.id, settings);
           };
         };
 
         function sClans(bot, fs){
-          const userFiles = fs.readdirSync('../.././bot_db/srpg/settings/clans').filter(file => file.endsWith('.json'));
+          const userFiles = fs.readdirSync('../.././bot_db/srpg/clans').filter(file => file.endsWith('.json'));
 
-          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/settings/clans/${file}`);
-            bot.srpg.settings.factions.set(settings.id, settings);
+          for (const file of userFiles) { 	const settings = require(`../../../../../../.././bot_db/srpg/clans/${file}`);
+            bot.srpg.factions.set(settings.id, settings);
           };
         };
 
