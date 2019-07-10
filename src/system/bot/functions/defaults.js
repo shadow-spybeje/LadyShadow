@@ -59,21 +59,54 @@ module.exports = {
         };
 
         function srpgUser(user, bot){
-            //
+            file = {
+                "id" : `${user.id}`,
+                "name" : `${user.tag}`,
+                "faction" : ``,
+                "clan" : ``,
+
+                "class" : ``,
+                "stats" : {
+                  "hp" : 0,
+                  "def" : 0,
+                  "str" : 0,
+                },
+
+
+                "gear" : {},
+                "inv" : {},
+
+                "misc" : {
+                  "status" : `Pre-Registered`,
+                  "legacy" : false,
+                },
+              };
+
+            json = JSON.stringify(file);
+            fs.writeFileSync(`../.././bot_db/srpg/users/${user.id}.json`, json)
+            bot.srpg.users.set(user.id, file);
         };
 
         function srpgFaction(faction, bot){
-            //
+            file = {
+                "id" : `${faction.id}`, //--ID = Date.now()
+                "name" : `${faction.name}`,
+            };
+
+            json = JSON.stringify(file);
+            fs.writeFileSync(`../.././bot_db/srpg/factions/${faction.id}.json`, json)
+            bot.srpg.factions.set(faction.id, file);
         };
 
         function srpgClan(clan, bot){
             file = {
               "id" : `${clan.id}`,
-            }
+              "name" : `${clan.name}`, 
+            };
 
             json = JSON.stringify(file);
             fs.writeFileSync(`../.././bot_db/srpg/clans/${clan.id}.json`, json)
-            bot.srpg.settings.clans.set(clan.id, file);
+            bot.srpg.clans.set(clan.id, file);
         };
 
 
@@ -86,13 +119,13 @@ module.exports = {
                 user(info, bot);
             break;
             case("srpguser"):
-                user(info, bot);
+                srpgUser(info, bot);
             break;
             case("srpgfaction"):
-                faction(info, bot);
+                srpgFaction(info, bot);
             break;
             case("srpgclan"):
-                clan(info, bot);
+                srpgClan(info, bot);
             break;
         };
     }
