@@ -4,6 +4,9 @@ module.exports = {
     description : "Reloads an SRPG Commad.",
     usage : "<cmd>",
 
+    help : "owner",
+    args : true,
+
     execute(message, args){
         bot = message.client;
 

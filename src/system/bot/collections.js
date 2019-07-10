@@ -89,6 +89,10 @@ module.exports = {
         function srpg(bot){
           //Begin S.RPG.
             bot.srpg = new discord.Collection();
+          //S.RPG Config file.
+            bot.srpg.config = require(`../../cmds/srpg/system/config.json`);
+          //S.RPG Admins
+            bot.srpg.admins = bot.srpg.config.admins;
           //S.RPG Commands.
             bot.cmds.srpg = new discord.Collection();
 
