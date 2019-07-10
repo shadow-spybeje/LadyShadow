@@ -25,10 +25,12 @@ module.exports = {
         };
 
         id = args.shift();
-        if(!message.channel.fetchMessage(id)){
+        try{
+            if(!message.channel.fetchMessage(id)){
             e.setDescription(`The provided ID was either not an \`ID\` to a \`Message\` in this Channel. Or wasn't a \`Message.ID\` to start with.`);
             return message.channel.send(e);
-        };
+            };
+        }catch(e){console.error};
 
         message.channel.fetchMessage(id).then(msg => {
             if(msg.author.id != bot.user.id){
