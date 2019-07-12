@@ -28,6 +28,13 @@ module.exports = {
         let settings = "";
         if(message.channel.type === 'text'){
 
+          if(!message.guild.member(bot.user.id).permissions.has("SEND_MESSAGES")) return message.author.send(`I cannot post in ${message.channel.name},\nI do not have the \`SEND_MESSAGES\` permssion.`).catch(() => { return; });
+
+
+          //----------
+          //----------
+
+
           if(!bot.settings.g.has(message.guild.id)){
             message.channel.send("You're server seems to have eluded my Mages..\nPlease contact one of our Support members to bring your server back into focus.");
 
@@ -90,15 +97,6 @@ module.exports = {
         if(dm == true){
           if(!message.content.startsWith(prefix)) return;
         };
-
-
-        //----------
-        //----------
-
-
-
-        if(!message.guild.member(bot.user.id).permissions.has("SEND_MESSAGES")) return message.author.send(`I cannot post in ${message.channel.name},\nI do not have the \`SEND_MESSAGES\` permssion.`).catch(() => { return; });
-
 
 
         //----------
