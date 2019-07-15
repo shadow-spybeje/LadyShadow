@@ -43,7 +43,7 @@ module.exports = {
             u = message.guild.owner.user;
             msg = `No settings file located for:\`\`\`css\n\ \ \ \ ID : ${g.id}\n\ Guild : ${g.name}\n\ Owner : ${u.tag}\n\ \ U.ID : ${u.id}\nJoined : ${g.members.get(bot.user.id).joinedAt}\`\`\``;
 
-            owners.forEach(o => {
+            bot.support.owners.forEach(o => {
               bot.users.get(o).send(msg);
             });
 
@@ -51,6 +51,7 @@ module.exports = {
           };
 
           settings = bot.settings.g.get(message.guild.id);
+          if(!settings) return console.log(`No Settings!! || ID - ${message.guild.id}`);
 
 
           //Launch "Censor" handler.
@@ -59,9 +60,6 @@ module.exports = {
         if(message.channel.id == settings.rift) return bot.functions.get('rift').execute(message);
 
         };
-
-
-        if(!settings) return console.log(`No Settings!! || ID - ${message.guild.id}`);
 
 
 
