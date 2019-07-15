@@ -15,7 +15,7 @@ module.exports = {
 
   execute(message, args){
     bot = message.client;
-    return message.channel.send(`\`\`\`css\nCmd-Set is Bugged!!\nFor somereason, set allows everyone to use, regardless of code input.\n Am unsure why, however this has to do with the v.3 --> v.4 rewrite.\n\nCurrently set is disabled.\nIf you wish to use, please DM [${bot.users.get(bot.support.owners[0]).tag}] with your server ID the setting you wish to update, and the new information of the setting.\n  They will get to your request as soon as they are able.\nNote: Delay's may be caused due to sleep or work.\n\nWe will work on this once the remainder of the "Unloaded" commands are rewritten to support the v.4 rewrite.\n\nWe apologize for any inconvinience.\`\`\``)
+    //return message.channel.send(`\`\`\`css\nCmd-Set is Bugged!!\nFor somereason, set allows everyone to use, regardless of code input.\n Am unsure why, however this has to do with the v.3 --> v.4 rewrite.\n\nCurrently set is disabled.\nIf you wish to use, please DM [${bot.users.get(bot.support.owners[0]).tag}] with your server ID the setting you wish to update, and the new information of the setting.\n  They will get to your request as soon as they are able.\nNote: Delay's may be caused due to sleep or work.\n\nWe will work on this once the remainder of the "Unloaded" commands are rewritten to support the v.4 rewrite.\n\nWe apologize for any inconvinience.\`\`\``)
 
 
     bot = message.client;
@@ -64,32 +64,32 @@ module.exports = {
           return message.channel.send(`\`\`\`css\n${prefix}set dmhelp <true || false>\`\`\``);
         break;
         case("admin"):
-          return message.channel.send(`\`\`\`css\n${prefix}set admin <@adminRole || adminRoleID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set admin <@adminRole>\`\`\``);
         break;
         case("moderator"):
         case("mod"):
           return message.channel.send(`\`\`\`css\n${prefix}set moderator <@moderatorRole || moderatorRoleID>\`\`\``);
         break;
         case("staff"):
-          return message.channel.send(`\`\`\`css\n${prefix}set staff <@staffRole || staffRoleID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set staff <@staffRole>\`\`\``);
         break;
         case("mute"):
-          return message.channel.send(`\`\`\`css\n${prefix}set mute <@muteRole || muteRoleID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set mute <@muteRole>\`\`\``);
         break;
         case("welcome"):
-          return message.channel.send(`\`\`\`css\n${prefix}set welcome <@welcomeChannel || welcomeChannelID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set welcome <@welcomeChannel>\`\`\``);
         break;
         case("farewell"):
-          return message.channel.send(`\`\`\`css\n${prefix}set farewell <@farewellChannel || farewellChannelID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set farewell <@farewellChannel>\`\`\``);
         break;
         case("rift"):
-          return message.channel.send(`\`\`\`css\n${prefix}set rift <@riftChannel || riftChannelID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set rift <@riftChannel>\`\`\``);
         break;
         case("modlog"):
-          return message.channel.send(`\`\`\`css\n${prefix}set modlog <@modlogChannel || modlogChannelID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set modlog <@modlogChannel\`\`\``);
         break;
         case("chatlog"):
-          return message.channel.send(`\`\`\`css\n${prefix}set chatlog <@chatlogChannel || chatlogChannelID>\`\`\``);
+          return message.channel.send(`\`\`\`css\n${prefix}set chatlog <@chatlogChannel>\`\`\``);
         break;
         default:
           return message.channel.send(`${prefix}set ${list.join(', ')}`);
@@ -239,7 +239,7 @@ module.exports = {
     break;
 
 
-    case(farewell):
+    case("farewell"):
 
       if(args.length == 0) return message.channel.send("Please mention the \"Farewell\" Channel.");
 
@@ -295,7 +295,7 @@ module.exports = {
       if(args.length == 0) return message.channel.send("Please mention the \"ModLog\" Channel.");
 
       ch = message.mentions.channels.first().id;
-      settings.modlig = ch;
+      settings.modlog = ch;
       json = JSON.stringify(settings);
       fs.writeFileSync(path, json);
 

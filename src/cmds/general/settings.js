@@ -7,6 +7,7 @@ module.exports = {
 
   name : "settings",
   description : "Calls the settings set for the server.",
+  usage : "| To set use `{p}help set`",
 
   guildOnly : true,
   help : "admin",
@@ -64,7 +65,7 @@ module.exports = {
     if(settings.farewell) farewell = `#${bot.channels.get(settings.farewell).name} (${settings.farewell})`;
     if(settings.rift) rift = `#${bot.channels.get(settings.rift).name} (${settings.rift})`;
     if(settings.modlog) modlog = `#${bot.channels.get(settings.modlog).name} (${settings.modlog})`;
-    if(settings.rift) chatlog = `#${bot.channels.get(settings.chatlog).name} (${settings.chatlog})`;
+    if(settings.chatlog) chatlog = `#${bot.channels.get(settings.chatlog).name} (${settings.chatlog})`;
 
     if(settings.admin) admin = `@${bot.guilds.get(id).roles.get(settings.admin).name} (${settings.admin})`;
     if(settings.moderator) moderator = `@${bot.guilds.get(id).roles.get(settings.moderator).name} (${settings.moderator})`;
