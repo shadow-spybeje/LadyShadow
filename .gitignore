@@ -332,3 +332,4 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+src/cmds/srpg/system/config.json
