@@ -15,7 +15,11 @@ exports.roleCards = {
      * * * Bodyguard
      * * * Doctor
      * * Ts - Support
-     *
+     * * * Escort
+     * * * Mayor
+     * * * Medium
+     * * * Retributionist
+     * * * Transporter
      * Neutral
      * * Nb - Benign
      * * * Amnesiac
