@@ -1,17 +1,22 @@
 const discord = require('discord.js');
 
+partnerTags = [
+  "shdw | shadow",
+  "ph | ichi | ichigo",
+  "gg"
+];
+
 module.exports = {
   coded : "2019-03-06",
 
   name : "invite",
   aliases : ["inv"],
   description : "Provides bot links.",
-  usage : "[partners | tag] | invite tag [info]",
+  usage : "<partners/tags | tag>",
 
 
   execute(message, args){
     bot = message.client;
-    partnerTags = ["ph", "ichi", "gg"];
 
     e = new discord.RichEmbed()
       .setTitle("Invite")
@@ -32,8 +37,11 @@ module.exports = {
     subCmd = args.shift().toLowerCase();
     switch(subCmd){
       case("partners"):
-        return message.channel.send(partnerTags.join(', '))
+      case("tags"):
+        return message.channel.send('• '+partnerTags.join(',\n• '), {code:'css'})
       break;
+
+
 
 
       function getPartner (id){
@@ -41,45 +49,79 @@ module.exports = {
 
         let noID = "";
         let noGuild = "";
+        let isPartnered = "";
+        let noInvite = "";
 
         if(id == "" || id.length == 0){
-          noID = "PartnerError: ID Length == 0 or null.\n    at \"cmds/.../invite.js:39:28\"";
+          noID = "PartnerError: ID Length == 0 or null.\n    at \"cmds/.../invite.js:45:12\"";
           console.log('\n'+noID);
           message.channel.send(`\`ERROR\` \`\`\`css\n${noID}\`\`\``);
         };
 
         if(!bot.guilds.get(id)){
-          noGuild = "PartnerError: Not in partnered guild, guild is unavailable.\n    at \"cmds/.../invite.js:45:28\"";
+          noGuild = "PartnerError: Not in partnered guild, guild is unavailable.";
           console.log('\n'+noGuild);
           message.channel.send(`\`ERROR\` \`\`\`css\n${noGuild}\`\`\``);
         };
 
-        let info = "";
+        if(!bot.settings.g.get(id).partnered){
+          isPartnered = "PartnerError: Guild is no longer a Shadow Partner\nInvite tag pending removal.";
+          console.log('\n'+isPartnered);
+          message.channel.send(`\`ERROR\` \`\`\`css\n${isPartnered}\`\`\``);
+        };
 
-        if(noID == "" && noGuild == ""){
+        if(!bot.settings.g.get(id).partner.invite){
+          noInvite = "PartnerError: Partner guild hasn't set a Partner Invite.";
+          console.log('\n'+noInvite);
+          message.channel.send(`\`ERROR\` \`\`\`css\n${noInvite}\`\`\``);
+        };
+
+
+        if(noID == "" && noGuild == "" && isPartnered == "" && noInvite == ""){
 
             // Gather Info.
 
           g = bot.guilds.get(id);
           s = bot.settings.g.get(id);
 
-          info : {
-            t = g.name;
-            th = g.iconURL;
-            c = s.color;
-            inv = s.inv;
-            rules = s.rules.join("\n• ");
-            d = `[Partner Server Invite](${inv})\n\n**Rules**\n• ${rules}`;
-          };
-        };
 
-        return info;
+
+          info = {
+            owner : {
+              tag : g.owner.user.tag,
+              avatarURL : g.owner.user.avatarURL,
+            },
+
+            t : g.name,
+            th : g.iconURL,
+            c : s.color,
+
+            inv : `• [discord.gg/${s.partner.tag}](${s.partner.invite})`,
+            r : `• ${s.partner.rules.join("\n• ")}`,
+            d : `• ${s.partner.description}`,
+
+          };
+
+
+          if(!info.r || info.r.length == 0) info.r = "```css\n---==☆ Rules Not Set ☆==---```";
+          if(!info.d || info.d.length == 0) info.d = "```css\n---==☆ Description Not Set ☆==---```";
+
+          return info;
+        };
       };
 
 
       case("ph"):
-      case("ichi")://556013291378442240
+      case("ichi"):
+      case("ichigo")://556013291378442240
         i = getPartner("556013291378442240");
+        if(!i) return;
+      break;
+
+
+      case("shdw"):
+      case("shadow")://416906584900239370
+        i = getPartner("416906584900239370");
         if(!i) return;
       break;
 
@@ -94,10 +136,16 @@ module.exports = {
         return;
     };
 
-    e.setTitle(i.t+" Invite");
+
+    e.setAuthor("");
+    e.setDescription("");
+    e.setTitle(i.t);
     e.setThumbnail(i.th);
     e.setColor(i.c);
-    e.setDescription(i.d);
+    e.setFooter(i.owner.tag, i.owner.avatarURL)
+    e.addField("Invite", i.inv);
+    e.addField("Description", i.d);
+    e.addField("Rules", i.r);
 
     message.channel.send(e);
   },

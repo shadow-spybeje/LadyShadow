@@ -46,7 +46,13 @@ module.exports = {
                   "comment-misc" : "Miscellaneous Things",
                 "blacklist" : [],
                 "censorWhitelist" : [],
-                "censor" : []
+                "censor" : [],
+                "partner" : {
+                  "tag" : "",
+                  "invite" : "",
+                  "description" : "",
+                  "rules" : []
+                }
             };
 
             json = JSON.stringify(settings);
@@ -101,7 +107,7 @@ module.exports = {
         function srpgClan(clan, bot){
             file = {
               "id" : `${clan.id}`,
-              "name" : `${clan.name}`, 
+              "name" : `${clan.name}`,
             };
 
             json = JSON.stringify(file);
