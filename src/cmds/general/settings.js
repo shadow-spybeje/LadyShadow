@@ -80,16 +80,16 @@ module.exports = {
       .setColor(color)
       .setFooter(`${g.name} - Settings: Edit with: "..set list" || ${bot.functions.get("date").execute(Date.now())}`)
 
-      if(settings.partnered != "") e.setDescription(`\`\`\`css\n---==☆ SHADOW PARTNER ☆==---\nAs of : ${settings.partnered}\`\`\``);
+      if(settings.partnered != "") e.setDescription(`\`\`\`css\n---==☆ SHADOW PARTNER ☆==---\`\`\``);
 
 
-      e.addField("General", `\`\`\`css\n\ \ \   Prefix : ${settings.prefix}\n\ \ \   DmHelp : ${settings.dmhelp}\n\ \ \   Censor : ${censor}\n      Color : ${color}\`\`\``)
+      e.addField("General", `\`\`\`css\n\ \ \   Prefix : ${settings.prefix}\n\ \ \   DmHelp : ${settings.dmhelp}\n\ \ \   Censor : ${censor}\n      Color : ${color}\`\`\``);
 
-      e.addField("Channels", `\`\`\`css\n\ \   Welcome : ${welcome}\n\   Farewell : ${farewell}\n\ \ \ \ \   Rift : ${rift}\n\ \ \   Modlog : ${modlog}\n\ \   Chatlog : ${chatlog}\`\`\``)
+      e.addField("Channels", `\`\`\`css\n\ \   Welcome : ${welcome}\n\   Farewell : ${farewell}\n\ \ \ \ \   Rift : ${rift}\n\ \ \   Modlog : ${modlog}\n\ \   Chatlog : ${chatlog}\`\`\``);
 
-      e.addField("Roles", `\`\`\`css\n\ \ \ \   Admin : ${admin}\n  Moderator : ${moderator}\n\ \ \ \   Staff : ${staff}\n\ \ \ \ \   Join : ${join}\n\ \ \ \   Muted : ${muted}\`\`\``)
+      e.addField("Roles", `\`\`\`css\n\ \ \ \   Admin : ${admin}\n  Moderator : ${moderator}\n\ \ \ \   Staff : ${staff}\n\ \ \ \ \   Join : ${join}\n\ \ \ \   Muted : ${muted}\`\`\``);
 
-      e.addField("Misc", `\`\`\`css\nBlacklisted : ${settings.blacklist.length}\n\n[CENSOR]\nWhitelisted : ${settings.censorWhitelist.length}\nCensorWords : ${settings.censor.length}\`\`\``)
+      e.addField("Misc", `\`\`\`css\nBlacklisted : ${settings.blacklist.length}\n\n[CENSOR]\nWhitelisted : ${settings.censorWhitelist.length}\nCensorWords : ${settings.censor.length}\`\`\``);
 
 
     message.channel.send(e);
