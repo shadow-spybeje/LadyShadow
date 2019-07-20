@@ -75,12 +75,32 @@ module.exports = {
 
     partners = "";
 
+
+    let listed = false;
+    let invite = false;
+    p = settings.partner
+    let l = {l:false,t:"",r:0,i:`${p.invite}`,d:""};
+    if(p.invite != ""){
+      invite = true;
+      if(p.listed == true) l.l = true;
+      if(p.tag != "") l.t = p.tag;
+      if(p.rules.length != 0) l.r = p.rules.length;
+      if(p.description != "") l.d = p.description;
+    };
+
+    let pa = "";
+
+    if(invite == true){
+      pa = `\nListed : ${l.l}\n\ \ \ Tag : ${l.t}\n\ Rules : ${l.r}\nInvite : ${l.i}\n\ \ Desc : ${l.d}`;
+    };
+
+
     const e = new discord.RichEmbed()
       .setAuthor(`${g.name}'s Settings`, g.iconURL)
       .setColor(color)
       .setFooter(`${g.name} - Settings: Edit with: "..set list" || ${bot.functions.get("date").execute(Date.now())}`)
 
-      if(settings.partnered != "") e.setDescription(`\`\`\`css\n---==☆ SHADOW PARTNER ☆==---\`\`\``);
+      if(settings.partnered == true) e.setDescription(`\`\`\`css\n---==☆ SHADOW PARTNER ☆==---${pa}\`\`\``);
 
 
       e.addField("General", `\`\`\`css\n\ \ \   Prefix : ${settings.prefix}\n\ \ \   DmHelp : ${settings.dmhelp}\n\ \ \   Censor : ${censor}\n      Color : ${color}\`\`\``);
