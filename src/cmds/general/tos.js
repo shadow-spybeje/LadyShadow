@@ -1,7 +1,7 @@
 roles = {
-    "town" : ["Jailor", "Veteran", "VampireHunter^", "Vigilante", "Investigator", "Lookout", "Sheriff", "Spy", "Bodyguard", "Doctor", "Escort", "Mayor", "Medium", "Retributionist", "Transporter"],
-    "neutral" : ["Amnesiac^", "Survivor^", "Vampire^", "Executioner", "Jester", "Witch", "Arsonist", "SerialKiller", "Werewolf"],
-    "mafia" : ["Godfather", "Mafioso", "Blackmailer", "Consigliere", "Consort", "Disguiser", "Forger", "Framer", "Janitor"],
+    "town" : ["Bodyguard", "Doctor", "Escort", "Investigator", "Jailor", "Lookout", "Mayor", "Medium", "Retributionist", "Sheriff", "Spy", "Transporter", "VampireHunter^", "Veteran", "Vigilante"],
+    "neutral" : ["Amnesiac^", "Arsonist", "Executioner", "Jester", "SerialKiller", "Survivor^", "Vampire^", "Werewolf", "Witch"],
+    "mafia" : ["Blackmailer", "Consigliere", "Consort", "Disguiser", "Forger", "Framer", "Godfather", "Janitor", "Mafioso"],
 };
 
 
