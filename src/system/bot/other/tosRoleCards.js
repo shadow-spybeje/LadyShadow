@@ -81,12 +81,20 @@ exports.roleCards = {
 
         "goal" : "Lynch every Criminal and Evildoer.",
         "abilities" : "You may chose one persion during the day to Jail for the night.",
-        "attributes" : ["-You may anonymously talk with your prisoner.", "-You can chose to attack your prisoner.", "The jailed target cannot preform their night ability."],
+        "attributes" : ["-You may anonymously talk with your prisoner.", "-You can chose to attack your prisoner.", "-The jailed target cannot preform their night ability."],
 
         "results" : {
             "sher" : "Ns/Gf",
             "invest" : "Spy, Bm, Jailor",
             "other" : "Jailor",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/7/7e/Jailor.png/revision/latest?cb=20151021224315",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/64/Achievement_Jailor.png/revision/latest?cb=20140825150602",
         },
     },
 
@@ -110,6 +118,14 @@ exports.roleCards = {
             "invest" : "Vig, Vet, Mafi",
             "other" : "Veteran",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/7/71/Vetmobile.png/revision/latest/scale-to-width-down/50?cb=20190110073013",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/1/1b/Achievement_Veteran.png/revision/latest/scale-to-width-down/50?cb=20140825150759",
+        },
     },
 
 
@@ -132,6 +148,14 @@ exports.roleCards = {
             "invest" : "Surv, VH, Amne",
             "other" : "Vampire Hunter",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/c8/Vampire_Hunter.png/revision/latest/scale-to-width-down/150?cb=20151101133904",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/8/8e/Achievement_Vampire_Hunter.png/revision/latest/scale-to-width-down/50?cb=20151130210939",
+        },
     },
 
 
@@ -140,7 +164,7 @@ exports.roleCards = {
         "alias" : "Vig",
         "alignment" : "Tk | Town (Killing)",
         "canVisit" : true,
-        "unique" : true,
+        "unique" : false,
 
         "attack" : "Basic",
         "defence" : "None",
@@ -153,6 +177,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Vig, Vet, Mafi",
             "other" : "Vigilante",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/3/3c/Brock_Smith.png/revision/latest/scale-to-width-down/138?cb=20160914033426",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/1/1f/Achievement_Vigilante.png/revision/latest/scale-to-width-down/50?cb=20140825150808",
         },
     },
 
@@ -185,6 +217,14 @@ exports.roleCards = {
             "invest" : "Inv, May, Consi",
             "other" : "Investigator",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/cb/Investigator.png/revision/latest?cb=20141222203926",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/2/20/Achievement_Investigator.png/revision/latest/scale-to-width-down/50?cb=20140825150920",
+        },
     },
 
 
@@ -206,6 +246,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Lo, For, Witch",
             "other" : "Lookout",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/9/9d/Lomobile.png/revision/latest/scale-to-width-down/50?cb=20190110070744",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f6/Achievement_Lookout.png/revision/latest/scale-to-width-down/50?cb=20140825150631",
         },
     },
 
@@ -229,6 +277,14 @@ exports.roleCards = {
             "invest" : "Sh, Exe, Ww",
             "other" : "Sheriff",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/3/3e/Sheriff.png/revision/latest/scale-to-width-down/150?cb=20140802032529",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/e7/Achievement_Sheriff.png/revision/latest/scale-to-width-down/50?cb=20140825150706",
+        },
     },
 
 
@@ -250,6 +306,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Spy, Bm, Jailor",
             "other" : "Spy",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/3/36/Spy.png/revision/latest/scale-to-width-down/150?cb=20151129195522",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/0/0b/Achievement_Spy.png/revision/latest/scale-to-width-down/50?cb=20140825150715",
         },
     },
 
@@ -280,6 +344,14 @@ exports.roleCards = {
             "invest" : "Bg, Gf, Arso",
             "other" : "Bodyguard",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/8/87/Bodyguard.png/revision/latest?cb=20150207170237",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/ef/Achievement_Bodyguard.png/revision/latest/scale-to-width-down/50?cb=20140708090613",
+        },
     },
 
 
@@ -301,6 +373,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Doc, Disg, Sk",
             "other" : "Doctor",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/6c/Doctor.png/revision/latest?cb=20140802032512",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/a/a0/Achievement_Doctor.png/revision/latest/scale-to-width-down/50?cb=20140708093156",
         },
     },
 
@@ -334,6 +414,14 @@ exports.roleCards = {
             "invest" : "Exc, Tran, Conso",
             "other" : "Escort",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/d/d3/Escort.png/revision/latest?cb=20150506224645",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/2/29/Achievement_Escort.png/revision/latest/scale-to-width-down/50?cb=20140708093747",
+        },
     },
 
 
@@ -355,6 +443,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Inv, May, Consi",
             "other" : "Mayor",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/8/8b/MoneyBag.png/revision/latest?cb=20141029221203",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/a/aa/Achievement_Mayor_2017.png/revision/latest/scale-to-width-down/50?cb=20171130202502",
         },
     },
 
@@ -378,6 +474,14 @@ exports.roleCards = {
             "invest" : "Med, Jan, Ret",
             "other" : "Retributionist",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/e9/Medmobile.png/revision/latest/scale-to-width-down/50?cb=20190110071103",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/63/Achievement_Medium.png/revision/latest/scale-to-width-down/50?cb=20180728223723",
+        },
     },
 
 
@@ -400,6 +504,14 @@ exports.roleCards = {
             "invest" : "Med, Jan, Ret",
             "other" : "Retributionist",
         },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/3/33/Retmobile.png/revision/latest/scale-to-width-down/50?cb=20190110072041",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/61/Achievement_Retributionist.png/revision/latest/scale-to-width-down/50?cb=20140825150657",
+        },
     },
 
 
@@ -421,6 +533,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Esc, Tran, Conso",
             "other" : "Transporter",
+        },
+
+        "misc" : {
+            "color" : "45BF00",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f6/Transmobile.png/revision/latest/scale-to-width-down/50?cb=20190110072616",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/5/5a/Achievement_Transporter.png/revision/latest/scale-to-width-down/50?cb=20140825150750",
         },
     },
 
@@ -460,6 +580,14 @@ exports.roleCards = {
             "invest" : "Surv, VH, Amne",
             "other" : "Amnesiac",
         },
+
+        "misc" : {
+            "color" : "4FF0E8",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/2/2f/Forgetful_Freddy.png/revision/latest/scale-to-width-down/110?cb=20160826030733",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/65/Achievement_Amnesiac.png/revision/latest/scale-to-width-down/50?cb=20140825150322",
+        },
     },
 
 
@@ -481,6 +609,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Surv, VH, Amne",
             "other" : "Survivor",
+        },
+
+        "misc" : {
+            "color" : "C8C800",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/5/57/Achievement_Survivor.png/revision/latest/scale-to-width-down/50?cb=20140825150726",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/a/a9/Survmobile.png/revision/latest/scale-to-width-down/50?cb=20190110072507",
         },
     },
 
@@ -507,8 +643,16 @@ exports.roleCards = {
 
         "results" : {
             "sher" : "Ns/Gf",
-            "invest" : "Fram, Vamp, Jest",
+            "invest" : "Fram, Jest, Vamp",
             "other" : "Vampire",
+        },
+
+        "misc" : {
+            "color" : "788867",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/4/4e/Vampire.png/revision/latest/scale-to-width-down/150?cb=20151101133009",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/7/75/Achievement_Vampire.png/revision/latest/scale-to-width-down/50?cb=20151130211326",
         },
     },
 
@@ -540,6 +684,14 @@ exports.roleCards = {
             "invest" : "Sh, Exe, Ww",
             "other" : "Executioner",
         },
+
+        "misc" : {
+            "color" : "ACACAC",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/4/48/Executioner_Avatar.png/revision/latest/scale-to-width-down/150?cb=20181007055854",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/8/8c/Achievement_Executioner.png/revision/latest/scale-to-width-down/50?cb=20140825150517",
+        },
     },
 
 
@@ -559,8 +711,16 @@ exports.roleCards = {
 
         "results" : {
             "sher" : "Ns/Gf",
-            "invest" : "Fram, Vamp, Jest",
+            "invest" : "Fram, Jest, Vamp",
             "other" : "Jester",
+        },
+
+        "misc" : {
+            "color" : "F49FD0",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/e0/Jester.png/revision/latest?cb=20140716035330",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/0/05/Achievement_Jester.png/revision/latest/scale-to-width-down/50?cb=20140825150623",
         },
     },
 
@@ -583,6 +743,14 @@ exports.roleCards = {
             "sher" : "Ns/Gf",
             "invest" : "Lo, Forg, Witch",
             "other" : "Witch",
+        },
+
+        "misc" : {
+            "color" : "BF5FFF",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/e6/Witch.png/revision/latest?cb=20140716035354",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/2/20/Achievement_Witch.png/revision/latest/scale-to-width-down/50?cb=20140825150816",
         },
     },
 
@@ -614,10 +782,18 @@ exports.roleCards = {
             "invest" : "Bg, Gf, Arso",
             "other" : "Arsonist",
         },
+
+        "misc" : {
+            "color" : "EE7600",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/c3/Arsonist.png/revision/latest?cb=20141029221117",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/cf/Achievement_Arsonist.png/revision/latest/scale-to-width-down/50?cb=20140825150335",
+        },
     },
 
 
-    "serialkillar" : {
+    "serialkiller" : {
         "name" : "Serial Killer",
         "alias" : "Sk",
         "alignment" : "Nk | Neutral (Killing)",
@@ -635,6 +811,14 @@ exports.roleCards = {
             "sher" : "Sus",
             "invest" : "Doc, Disg, Sk",
             "other" : "Serial Killer",
+        },
+
+        "misc" : {
+            "color" : "000080",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/7/75/SerialKiller.png/revision/latest?cb=20140816021322",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/9/98/Achievement_Serial_Killer.png/revision/latest/scale-to-width-down/50?cb=20140723234035",
         },
     },
 
@@ -654,9 +838,17 @@ exports.roleCards = {
         "attributes" : ["-You will Rampage at a players house when you attack."],
 
         "results" : {
-            "sher" : "Odd # Nights: Ns/Gf\n• Full moons: Sus",
+            "sher" : "\n**• • Non-Moons: **Ns/Gf**\n• • Full-moons: **Sus",
             "invest" : "Sh, Exe, Ww",
             "other" : "Werewolf",
+        },
+
+        "misc" : {
+            "color" : "744A26",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/c1/Lycanthrope.png/revision/latest/scale-to-width-down/151?cb=20160506214350",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/0/07/Achievement_Werewolf2.png/revision/latest/scale-to-width-down/50?cb=20170730212305",
         },
     },
 
@@ -695,6 +887,14 @@ exports.roleCards = {
             "invest" : "Bg, Gf, Arso",
             "other" : "Godfather",
         },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/9/97/Godfather_2.png/revision/latest/scale-to-width-down/100?cb=20160606042812",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/b/b1/Achievement_Godfather.png/revision/latest/scale-to-width-down/50?cb=20140825150541",
+        },
     },
 
 
@@ -716,6 +916,14 @@ exports.roleCards = {
             "sher" : "Sus",
             "invest" : "Vig, Vet, Mafi",
             "other" : "Mafioso",
+        },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/e/e3/Mafioso_Skin.png/revision/latest/scale-to-width-down/100?cb=20181221193552",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/7/70/Achievement_Mafioso.png/revision/latest/scale-to-width-down/50?cb=20140825150640",
         },
     },
 
@@ -747,6 +955,14 @@ exports.roleCards = {
             "invest" : "Spy, Bm, Jailer",
             "other" : "Blackmailer",
         },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f9/Bmermobile.png/revision/latest/scale-to-width-down/50?cb=20190110064403",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/0/0f/Achievement_Blackmailer.png/revision/latest/scale-to-width-down/50?cb=20140825150350",
+        },
     },
 
 
@@ -769,6 +985,14 @@ exports.roleCards = {
             "invest" : "Inv, May, Consi",
             "other" : "Consigliere",
         },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/a/a8/Consigmobile.png/revision/latest/scale-to-width-down/50?cb=20190110064717",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f6/Achievement_Consigliere.png/revision/latest/scale-to-width-down/50?cb=20140825150405",
+        },
     },
 
 
@@ -790,6 +1014,14 @@ exports.roleCards = {
             "sher" : "Sus",
             "invest" : "",
             "other" : "",
+        },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/c/c2/Consmobile.png/revision/latest/scale-to-width-down/50?cb=20190110064907",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f4/Achievement_Consort.png/revision/latest/scale-to-width-down/50?cb=20140825150414",
         },
     },
 
@@ -822,6 +1054,14 @@ exports.roleCards = {
             "invest" : "Doc, Disg, Sk",
             "other" : "Disguiser",
         },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/9/9a/Disgmobile.png/revision/latest/scale-to-width-down/50?cb=20190110065321",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/b/bf/Achievement_Disguiser.png/revision/latest/scale-to-width-down/50?cb=20140825150509",
+        },
     },
 
 
@@ -844,6 +1084,14 @@ exports.roleCards = {
             "invest" : "Lo, Forg, Witch",
             "other" : "Forger",
         },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/6/66/ForgerAvatar.png/revision/latest?cb=20150724030632",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/f/f0/Achievement_Forger.png/revision/latest/scale-to-width-down/50?cb=20150801143107",
+        },
     },
 
 
@@ -863,8 +1111,16 @@ exports.roleCards = {
 
         "results" : {
             "sher" : "Sus",
-            "invest" : "Fram, Vamp, Jest",
+            "invest" : "Fram, Jest, Vamp",
             "other" : "Framer",
+        },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/d/df/Framermobile.png/revision/latest/scale-to-width-down/50?cb=20190110065903",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/5/5c/Achievement_Framer.png/revision/latest/scale-to-width-down/50?cb=20140825150526",
         },
     },
 
@@ -887,6 +1143,14 @@ exports.roleCards = {
             "sher" : "Sus",
             "invest" : "Med, Jan, Ret",
             "other" : "Janitor",
+        },
+
+        "misc" : {
+            "color" : "DD0000",
+
+            "image1" : "https://vignette.wikia.nocookie.net/town-of-salem/images/4/4d/Yuan_Itor.png/revision/latest/scale-to-width-down/154?cb=20160826042531",
+
+            "image2" : "https://vignette.wikia.nocookie.net/town-of-salem/images/1/1a/Achievement_Janitor.png/revision/latest/scale-to-width-down/50?cb=20140825150612",
         },
     },
 };
