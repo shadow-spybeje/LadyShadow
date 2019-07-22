@@ -28,7 +28,7 @@ module.exports = {
 
         switch(target){
             case("list"):
-                return message.channel.send(`---==☆ Town ☆==---\n• ${roles.town.join(',\n• ')}\n\n---==☆ Nuetral ☆==---\n• ${roles.neutral.join(',\n• ')}\n\n---==☆ Mafia ☆==---\n• ${roles.mafia.join(',\n• ')}`, {code:'css'});
+                return message.channel.send(`\`${bot.settings.g.get(message.guild.id).prefix}tos <role>\` \`\`\`css\n---==☆ Town ☆==---\n• ${roles.town.join(',\n• ')}\n\n---==☆ Nuetral ☆==---\n• ${roles.neutral.join(',\n• ')}\n\n---==☆ Mafia ☆==---\n• ${roles.mafia.join(',\n• ')}\`\`\``);
             break;
             case("jailor"):
                 role = "jailor";
