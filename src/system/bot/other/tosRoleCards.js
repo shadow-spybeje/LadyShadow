@@ -268,7 +268,7 @@ exports.roleCards = {
         "attack" : "None",
         "defence" : "None",
 
-        "goal" : "",
+        "goal" : "Lynch every Criminal and Evildoer.",
         "abilities" : "-Interrogate one person each night for suspicious activity.",
         "attributes" : ["-You know if your target is suspicious."],
 
@@ -824,7 +824,7 @@ exports.roleCards = {
 
 
     "werewolf" : {
-        "name" : "Were Wolf",
+        "name" : "WereWolf",
         "alias" : "Ww",
         "alignment" : "Nk | Neutral (Killing)",
         "canVisit" : true,
@@ -1012,8 +1012,8 @@ exports.roleCards = {
 
         "results" : {
             "sher" : "Sus",
-            "invest" : "",
-            "other" : "",
+            "invest" : "Trans, Esc, Conso",
+            "other" : "Consort",
         },
 
         "misc" : {
