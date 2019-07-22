@@ -9,7 +9,7 @@ module.exports = {
     coded : '2019-07-19',
 
     name : "tos",
-    usage : "roles",
+    usage : "list",
     description : "Get information on a Town of Salem Role.",
 
     help : "basic",
