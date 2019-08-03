@@ -2,17 +2,17 @@ exports.classes = {
 
     "hunter" : {
         _class : "Hunter",
-        stats : { hp : 6, def : 3, atk : 3 }
+        stats : { hp : 360, def : 45, str : 30 }
     },
 
     "mage" : {
         _class : "Mage",
-        stats : { hp : 4, def : 2, atk : 1 },
+        stats : { hp : 240, def : 15, str : 10 },
     },
 
     "warrior" : {
         _class : "Warrior",
-        stats : { hp : 10, def : 5, atk : 5 },
+        stats : { hp : 600, def : 75, str : 75 },
     },
 
 }

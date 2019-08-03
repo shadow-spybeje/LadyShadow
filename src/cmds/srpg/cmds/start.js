@@ -65,7 +65,7 @@ module.exports = {
 
         e.setTitle("Welcome to the S.RPG!!");
         e.setColor("AQUA");
-        e.setDescription(`\`\`\`js\n Name : ${user.name}\n Clan : ${bot.srpg.clans.get(user.clan).name}\nClass : ${user.class}\n   HP : ${user.stats.hp*60}\n  Def : ${user.stats.def*15}\n  Atk : ${user.stats.atk*10}\`\`\``);
+        e.setDescription(`\`\`\`js\n Name : ${user.name}\n Clan : ${bot.srpg.clans.get(user.clan).name}\nClass : ${user.class}\n   HP : ${user.stats.hp*60}\n  Def : ${user.stats.def*15}\n  Atk : ${user.stats.str*10}\`\`\``);
 
         message.channel.send(e);
     },
