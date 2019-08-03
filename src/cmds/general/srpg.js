@@ -30,6 +30,23 @@ module.exports = {
         e.setColor("ff0000")
 
 
+        //Admin?
+        if(cmd.admin){
+
+          if(!bot.support.owners.includes(message.author.id)){
+            e.setDescription("**Admin Only**\n• This is an Admin Only command.");
+            return message.channel.send(embedError);
+          };
+        };
+
+
+        //guildOnly
+        if (cmd.guildOnly && message.channel.type !== 'text'){
+          e.setDescription("**Guild Only**\n• This Command can only be used Server-Side.")
+          return message.channel.send(e);
+        };
+
+
           //Args
         if (cmd.args && !args.length){
             let reply = `**Arguments**\n• You didn't provide any arguments!`;
@@ -43,20 +60,7 @@ module.exports = {
             };
         };
 
-          //guildOnly
-        if (cmd.guildOnly && message.channel.type !== 'text'){
-            e.setDescription("**Guild Only**\n• This Command can only be used Server-Side.")
-            return message.channel.send(e);
-        };
 
-          //Admin?
-        if(cmd.admin){
-
-            if(!bot.support.owners.includes(message.author.id)){
-                e.setDescription("**Admin Only**\n• This is an Admin Only command.");
-                return message.channel.send(embedError);
-            };
-        };
 
         try {
             cmd.execute(message, args);
