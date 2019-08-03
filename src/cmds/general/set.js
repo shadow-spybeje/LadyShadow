@@ -92,7 +92,7 @@ module.exports = {
           return message.channel.send(`\`\`\`css\n${prefix}set chatlog <@chatlogChannel>\`\`\``);
         break;
         default:
-          return message.channel.send(`${prefix}set ${list.join(', ')}`);
+          return message.channel.send(`${prefix}set <${list.join(' | ')}>`);
       };
     };
 
@@ -303,6 +303,59 @@ module.exports = {
       e.setDescription(`\`\`\`css\nModLog Channel = ${message.guild.channels.get(settings.modlog).name}\`\`\``);
 
       return message.channel.send(e);
+
+    break;
+
+
+    case("partner"):
+
+      // Swap to partners.
+      // // is server partner?
+      // // // is user server owner?
+      if(bot.support.owners.some(owner => {if(message.author.id != owner) return false}) == false) return;
+
+      list = ["=", ""];
+
+      let _case = args.shift().toLowerCase();
+
+      switch(_case){
+        case("="):
+
+          //Partner = true/false;
+          // //Bot Owners
+
+        break;
+        case("tag"):
+
+			// if(tag.length > 7)return "Tag is greater tahn length of 7";
+
+        break;
+        case("invite"):
+
+          //invite
+          // // Partner
+
+        break;
+        case("description"):
+
+			//desc = args.join(" ");
+
+        break;
+        case("rules"):
+
+			//rules = args.join(" ").split(" - ");
+
+        break;
+        case("listed"):
+
+			//listed = true/false
+
+        break;
+        default:
+          return message.channel.send(`..set partner <${list.join(' | ')}>`);
+      };
+
+      return;
 
     break;
       default:
