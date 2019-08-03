@@ -13,9 +13,9 @@ module.exports = {
         bot = message.client;
 
         e = new discord.RichEmbed()
-          .setColor("663399")
+          .setColor(bot.srpg.config.color)
           .setImage(shortURL[Math.round(Math.random() * (shortURL.length - 1))])
-          
+
           .setDescription("Welcome to the official world of Shadow.\n Where your limits will be pushed, and your weaknesses exposed.\n\nYou will be tested, against both ally, and foe.\n Do you have what it takes to survive the onslaught??")
           .setFooter("Coming Soon!!")
 
