@@ -98,6 +98,8 @@ module.exports = {
 
           //S.RPG Items.
             bot.srpg.items = require(`../../cmds/srpg/system/srpgItems.js`).items;
+          //S.RPG Images.
+            bot.srpg.images = require(`../../cmds/srpg/system/srpgImages.js`).images;
           //S.RPG Classes.
             bot.srpg.classes = require(`../../cmds/srpg/system/srpgClasses.js`).classes;
 
