@@ -1,7 +1,7 @@
 exports.classes = {
 
     "default" : {
-        _class : "default",
+        _class : "Default",
         stats : { hp : 10, def : 3, str : 5}
     },
 
