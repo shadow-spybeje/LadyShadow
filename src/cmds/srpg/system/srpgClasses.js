@@ -1,5 +1,10 @@
 exports.classes = {
 
+    "default" : {
+        _class : "default",
+        stats : { hp : 10, def : 3, str : 5}
+    },
+
     "hunter" : {
         _class : "Hunter",
         stats : { hp : 360, def : 45, str : 30 }

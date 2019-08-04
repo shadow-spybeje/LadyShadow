@@ -51,7 +51,8 @@ module.exports = {
 
         let clanID = bot.srpg.clans.get(message.guild.id).id;
 
-        stats = bot.srpg.classes[_class.toLowerCase()].stats
+        //stats = bot.srpg.classes[_class.toLowerCase()].stats;
+        stats = bot.srpg.classes["default"].stats;
 
         file = bot.srpg.users.get(message.author.id);
         file.class = _class;
@@ -65,7 +66,7 @@ module.exports = {
 
         e.setTitle("Welcome to the S.RPG!!");
         e.setColor("AQUA");
-        e.setDescription(`\`\`\`js\n Name : ${user.name}\n Clan : ${bot.srpg.clans.get(user.clan).name}\nClass : ${user.class}\n   HP : ${user.stats.hp*60}\n  Def : ${user.stats.def*15}\n  Atk : ${user.stats.str*10}\`\`\``);
+        e.setDescription(`\`\`\`js\n Name : ${user.name}\n Clan : ${bot.srpg.clans.get(user.clan).name}\nClass : ${user.class}\n   HP : ${user.stats.hp}\n  Def : ${user.stats.def}\n  Atk : ${user.stats.str}\`\`\``);
 
         message.channel.send(e);
     },
