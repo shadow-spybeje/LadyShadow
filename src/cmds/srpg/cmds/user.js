@@ -14,9 +14,9 @@ module.exports = {
 
         info = [
             `Class : ${u.class}`,
-            `\ \ \ HP : ${u.stats.hp*60}`,
-            `\ \ DEF : ${u.stats.def*15}`,
-            `\ \ STR : ${u.stats.str*10}`,
+            `\ \ \ HP : ${u.stats.hp}`,
+            `\ \ DEF : ${u.stats.def}`,
+            `\ \ STR : ${u.stats.str}`,
         ];
 
         e = new discord.RichEmbed()
