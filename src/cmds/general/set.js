@@ -9,7 +9,7 @@ module.exports = {
   description : "Edit server settings.",
   usage : `"<${list.join(' | ')}>"`,
   guildOnly : true,
-  //args : true,
+  args : true,
   help : "admin",
 
 
