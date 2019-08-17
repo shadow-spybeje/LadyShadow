@@ -88,7 +88,7 @@ module.exports = {
         //----------
         //----------
 
-        if(message.author.bot) if(message.author.id != "568883858427346974") return;
+        if(message.author.bot) if(message.author.id != "568883858427346974" && message.author.id != "575977933492191232") return;
         const bl = blacklist.some(id => { if(message.author.id == id) return true; });
         if(bl == true) return message.channel.send(`I'm sorry *\`Not Sorry\`* however I've been told to ignore your input.\n  Goodbye!!\`\`\`css\nYou've been blacklisted from use of this bot.\`\`\``);
 
