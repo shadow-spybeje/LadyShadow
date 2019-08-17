@@ -2,7 +2,7 @@ module.exports = {
     coded : "2019-08-17",
 
     name : "celebrate",
-    description : "Celebrate Lillth's Birthday.",
+    description : "Celebrate Lillith's Birthday.",
 
     help : "",
     easteregg : true,
@@ -32,7 +32,7 @@ module.exports = {
 
         //@Moonglade#shdw
         ch = bot.channels.get("569001544926887946");
-        ch.send(`{\n\ \ ${userInfo.id}\n\ \ ${userInfo.tag}\n}` ,{code:"js"});
+        ch.send(`{\n\ \ id : ${userInfo.id}\n\ \ tag : ${userInfo.tag}\n}` ,{code:"js"});
 
 
         ch.fetchMessage(numID).then(msg => {
