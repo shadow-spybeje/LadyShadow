@@ -7,7 +7,8 @@ module.exports = {
 
   execute (message){
     bot = message.client;
-    settings = bot.settings.g.get(message.guild.id);
+    settings = { color : bot.config.default.color };
+    if(message.channel.type == 'text') settings = bot.settings.g.get(message.guild.id);
 
     e = new discord.RichEmbed()
       .setTitle("Pong!!")
