@@ -46,7 +46,7 @@ module.exports = {
 
     if(args.length === 1) help = true;
 
-    list.push("mod")
+    list.push("mod"); //add "mod" as an alias for "moderator";
     list.some(word => {
       if(args[0].toLowerCase() === word) listed = true;
     });
