@@ -78,7 +78,7 @@ module.exports = {
         //----------
 
 
-        //if(message.content.startsWith(settings.prefix)) prefix = settings.prefix;
+        if(message.content.startsWith(settings.prefix)) prefix = settings.prefix;
         if(message.content.startsWith(gPrefix)) prefix = gPrefix;
         if(message.content.startsWith(oPrefix)) prefix = oPrefix;
         //if(message.content.startsWith("<@347872963636494337>")) prefix = message.guild.members.get(bot.user.id).displayname;
