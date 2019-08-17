@@ -12,11 +12,11 @@ exports.images = {
     items : [
         //{name: "", image: ""},
         {name: "gold", image: "https://tinyurl.com/yy9qlmdt"},
-        {name: "cookie", image: ""},
+        {name: "cookie", image: "https://tinyurl.com/yyytm22x"},
         {name: "shirt", image: ""},
         {name: "shortDagger", image: ""},
-        {name: "boogyBear", image: ""},
-        {name: "criminale", image: ""},
+        {name: "boogyBear", image: "https://tinyurl.com/y4njyz8g"},
+        {name: "criminale", image: "https://tinyurl.com/yya6lldh"},
     ],
 
     mobs : {
