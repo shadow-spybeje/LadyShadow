@@ -23,14 +23,14 @@ module.exports = {
       };
     };
 
-    /*try{
-      srpg = require(`.././System/Srpg/Users/${member.id}.json`)
+    try{
+      srpg = require(`../../../../../bot_db/srpg/users/${member.id}.json`)
     } catch(err) {
       srpg = {
         "registered" : false,
         "name" : null
       }
-    };*/
+    };
 
 
     const e = new discord.RichEmbed()
@@ -59,14 +59,14 @@ module.exports = {
 
 
 
-    /*if(bot.srpg.users.get(member.id)){
+    if(bot.srpg.users.get(member.id)){
         //Total Chars = "[8-Space] : [status]"
-      set.push(`\n\n\ \ \ \ ---==☆ S.RPG Settings ☆==---\n\ \ \ \ Name : ${srpg.name}`);
+      set.push(`\n\n\ \ \ \ ---==☆ S.RPG Settings ☆==---\n\ \ \ \ Name : ${srpg.name}\n\ \ \ Class : ${srpg.class}`);
     }else{
       set.push("\n\n\ \ \ \ ---==☆ User is not S.RPG Registered ☆==---");
-    };*/
+    };
 
-      var user = `${owner}\ \ \ \ \ \ ID : ${member.user.id}\n \ \ \ Nick : ${member.nickname}\nUsername : ${member.user.username}\n Discrim : #${member.user.discriminator}\n\n${set.join('')}`;
+      var user = `${owner}\ \ \ \ \ \ ID : ${member.user.id}\n \ \ \ Nick : ${member.nickname}\nUsername : ${member.user.username}\n Discrim : #${member.user.discriminator}\n Created : ${member.user.createdAt}\n Joined : ${member.joinedAt}\n\n${set.join('')}`;
 
 
       e.setDescription(`\`\`\`css\n${user}\`\`\``)
