@@ -43,14 +43,13 @@ module.exports = {
                 msg.edit(num);
                 message.channel.send(`You're person ${num} to celebrate my 4'th birthday!!\n🎉🎂🎊`);
 
+                //@ShadowSupport#shdw_announcements
+                bot.channels.get("417094117789794304").fetchMessage(announceID).then(msg => {
+
+                    msg.edit(`${num} people have celebrated my Birthday!! 😄`);
+
+                }).catch(console.error);
             };
-
-        }).catch(console.error);
-
-        //@ShadowSupport#shdw_announcements
-        bot.channels.get("417094117789794304").fetchMessage(announceID).then(msg => {
-
-            msg.edit(`${num} people have celebrated my Birthday!! 😄`);
 
         }).catch(console.error);
     },
