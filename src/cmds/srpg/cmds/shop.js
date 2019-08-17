@@ -41,7 +41,7 @@ module.exports = {
 
         //VIEW
         /*
-        ..eval
+        ..eval //
 
         item = bot.srpg.items[0];
 
@@ -50,6 +50,8 @@ module.exports = {
         e.setFooter(`Value: ${item.value}`);
         e.setThumbnail(bot.srpg.images.items[item.id - 1].image);
         e.setDescription(item.desc);
+        if(item.stats) e.addField("Stats", "Work In Process -- Dagger: +1 atk || Shirt: +1 def"); //item.stats
+        if(item.buffs) e.addField("[De]Buffs", item.buffs);
 
         message.channel.send(e);
         */
