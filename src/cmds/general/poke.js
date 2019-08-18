@@ -12,12 +12,11 @@ module.exports = {
 
   execute(message, args){
     bot = message.client;
-    
+
     let member = "";
     member = message.mentions.members.first();
     if(!member) message.guild.members.get(args[0]);
 
-    message.channel.send(`\`\`\`css\nArgs : ${args}\`\`\``)
 
     if(!member) {
       error = new discord.RichEmbed()
