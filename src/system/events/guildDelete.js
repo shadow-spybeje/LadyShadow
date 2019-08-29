@@ -9,7 +9,7 @@ module.exports = {
 
     execute(bot, guild){
 
-        console.log(`System: LeftGuild : Name: ${guild.name} || ID: ${guild.id}\n• • Time: ${bot.functions.get('date').execute(Date.now())}\n`);
+        console.log(`System: LeftGuild : Name: ${guild.name} || ID: ${guild.id}\n• • Time: ${bot.functions.get('date').execute(Date.now())}\nNew Count : ${bot.guilds.size}\n`);
 
 
         let users = 0;
@@ -29,7 +29,7 @@ module.exports = {
         e = new discord.RichEmbed()
             .setTitle(guild.name)
             .setThumbnail(guild.iconURL)
-            .setFooter(`Left a Guild || `+bot.functions.get('date').execute(Date.now()), bot.user.avatarURL)
+            .setFooter(`Left a Guild (Guild Count : ${bot.guilds.size}) || `+bot.functions.get('date').execute(Date.now()), bot.user.avatarURL)
             .setColor("RED")
             .setDescription(`\`\`\`css\n---==☆ Old Guild ☆==---\`\`\`\`\`\`css\nGuild ID : ${guild.id}\nM.Count : ${guild.memberCount}\n\n---==+ Cached +==---\n Members : ${users}\n    Bots : ${bots-1}\n Joined : ${joined})\`\`\``)
 
