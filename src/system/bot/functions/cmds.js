@@ -47,6 +47,9 @@ module.exports = {
             if (cmd.usage){
             reply += `\n\n**Usage**\n• The proper usage would be: \`${prefix}${cmd.name} ${cmd.usage}\``;
 
+            //Example
+            if(cmd.example) reply += `\n\n**Example**\n• \`${prefix}${cmd.name} ${cmd.example}\``
+
             e.setDescription(reply)
             return message.channel.send(e);
             };
@@ -75,6 +78,18 @@ module.exports = {
         try {
             cmd.execute(message, args);
         } catch (error) {
+
+          //Possible "ERROR's"
+          /*switch(error){
+
+            //Cmd Owner "raw"
+            case(error.startsWith("ENOENT: no such file or directory")):
+              error = `ENOENT: no such file or directory.\n• Is the target command in another category?\n ${bot.settings.g.get(message.guild.id).prefix}${cmd} [srpg, support, owner, unloaded] ${args.shift()}`;
+            break;
+          };*/
+
+
+
           //console.log(error);
           message.channel.send(bot.functions.get("err").execute(message, error));
           message.reply(`there was an error trying to execute \`${cmdName}\`!!`);

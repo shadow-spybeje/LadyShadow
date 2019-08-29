@@ -55,6 +55,9 @@ module.exports = {
             if (cmd.usage){
             reply += `\n\n**Usage**\n• The proper usage would be: \`${prefix}srpg ${cmd.name} ${cmd.usage}\``;
 
+            //Example
+            if(cmd.example) reply += `\n\n**Example**\n• \`${prefix}srpg ${cmd.name} ${cmd.example}\``
+
             e.setDescription(reply)
             return message.channel.send(e);
             };
