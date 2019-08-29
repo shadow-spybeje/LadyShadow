@@ -8,6 +8,6 @@ module.exports = {
     help : "basic",
 
     execute(message){
-        message.channel.send("This cmd is still being created.\nPlease visit the support server for more info!!\n\n\nBasic Help\n\n• shop\n• splash\n• start\n• suggest,\n• user");
+        message.channel.send("This cmd is still being created.\nPlease visit the support server for more info!!\n\n\nBasic Help\n\n• changelog\n• shop\n• splash\n• start\n• suggest,\n• user");
     },
 };
