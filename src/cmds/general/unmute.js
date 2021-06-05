@@ -44,8 +44,8 @@ module.exports = {
         };
 
 
-        if(!message.guild.members.get(target)) return message.channel.send("User not found!!\nPerhaps they're not on the server?\n`R.I.P.`");
-        target = message.guild.members.get(target); args.shift();
+        if(!message.guild.members.cache.get(target)) return message.channel.send("User not found!!\nPerhaps they're not on the server?\n`R.I.P.`");
+        target = message.guild.members.cache.get(target); args.shift();
 
         reason = args.join(' ');
         if(!reason) reason = `Unmuted by: ${message.author.tag} (${message.author.id})`;

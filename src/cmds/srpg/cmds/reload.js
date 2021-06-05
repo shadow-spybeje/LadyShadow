@@ -4,7 +4,7 @@ module.exports = {
     description : "Reloads an SRPG Commad.",
     usage : "<cmd>",
 
-    help : "owner",
+    help : "dev",
     args : true,
 
     execute(message, args){
@@ -31,7 +31,7 @@ module.exports = {
 
 
         // Announce the finish.
-        e = new discord.RichEmbed();
+        e = new discord.MessageEmbed();
         e.setColor("ffff00")
         e.setTitle("Reload")
         e.setDescription(`__**${cmd}**__ has been reloaded.\nPath : \`./LadyShadow_/src/cmds/srpg/cmds/${cmd}.js\``)

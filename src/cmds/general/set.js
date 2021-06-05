@@ -15,11 +15,11 @@ module.exports = {
 
   execute(message, args){
     bot = message.client;
-    //return message.channel.send(`\`\`\`css\nCmd-Set is Bugged!!\nFor somereason, set allows everyone to use, regardless of code input.\n Am unsure why, however this has to do with the v.3 --> v.4 rewrite.\n\nCurrently set is disabled.\nIf you wish to use, please DM [${bot.users.get(bot.support.owners[0]).tag}] with your server ID the setting you wish to update, and the new information of the setting.\n  They will get to your request as soon as they are able.\nNote: Delay's may be caused due to sleep or work.\n\nWe will work on this once the remainder of the "Unloaded" commands are rewritten to support the v.4 rewrite.\n\nWe apologize for any inconvinience.\`\`\``)
+    //return message.channel.send(`\`\`\`css\nCmd-Set is Bugged!!\nFor somereason, set allows everyone to use, regardless of code input.\n Am unsure why, however this has to do with the v.3 --> v.4 rewrite.\n\nCurrently set is disabled.\nIf you wish to use, please DM [${bot.users.cache.get(bot.support.owners[0]).tag}] with your server ID the setting you wish to update, and the new information of the setting.\n  They will get to your request as soon as they are able.\nNote: Delay's may be caused due to sleep or work.\n\nWe will work on this once the remainder of the "Unloaded" commands are rewritten to support the v.4 rewrite.\n\nWe apologize for any inconvinience.\`\`\``)
 
 
     bot = message.client;
-    const e = new discord.RichEmbed();
+    const e = new discord.MessageEmbed();
     support = bot.support.owners;
     support.concat(bot.support.users);
 
@@ -123,7 +123,7 @@ module.exports = {
         fs.writeFileSync(path, json);
 
         e.setTitle("<:settings:561649800206876684> New Prefix!!");
-        e.setDescription(`\`\`\`css\nOld Prefix : ${oPrefix}\nNew Prefix : ${nPrefix}\`\`\`If Shadow refuses to respond have ${bot.users.get(message.guild.owner.id).tag} DM her with the following command.\`\`\`css\n..reset ${message.guild.id} prefix\`\`\``);
+        e.setDescription(`\`\`\`css\nOld Prefix : ${oPrefix}\nNew Prefix : ${nPrefix}\`\`\`If Shadow refuses to respond have ${bot.users.cache.get(message.guild.owner.id).tag} DM her with the following command.\`\`\`css\n..reset ${message.guild.id} prefix\`\`\``);
 
         return message.channel.send(e);
 
@@ -232,7 +232,7 @@ module.exports = {
       fs.writeFileSync(path, json);
 
       e.setTitle(`<:settings:561649800206876684> New Welcome Channel`);
-      e.setDescription(`\`\`\`css\nWelcome Channel = ${message.guild.channels.get(settings.welcome).name}\`\`\``);
+      e.setDescription(`\`\`\`css\nWelcome Channel = ${message.guild.channels.cache.get(settings.welcome).name}\`\`\``);
 
       return message.channel.send(e);
 
@@ -249,7 +249,7 @@ module.exports = {
       fs.writeFileSync(path, json);
 
       e.setTitle(`<:settings:561649800206876684> New farewell Channel`);
-      e.setDescription(`\`\`\`css\nFarewell Channel = ${message.guild.channels.get(settings.farewell).name}\`\`\``);
+      e.setDescription(`\`\`\`css\nFarewell Channel = ${message.guild.channels.cache.get(settings.farewell).name}\`\`\``);
 
       return message.channel.send(e);
 
@@ -266,7 +266,7 @@ module.exports = {
       fs.writeFileSync(path, json);
 
       e.setTitle(`<:settings:561649800206876684> New Rift Channel`);
-      e.setDescription(`\`\`\`css\nRift Channel = ${message.guild.channels.get(settings.rift).name}\`\`\``);
+      e.setDescription(`\`\`\`css\nRift Channel = ${message.guild.channels.cache.get(settings.rift).name}\`\`\``);
 
       return message.channel.send(e);
 
@@ -283,7 +283,7 @@ module.exports = {
       fs.writeFileSync(path, json);
 
       e.setTitle(`<:settings:561649800206876684> New ChatLog Channel`);
-      e.setDescription(`\`\`\`css\nChatLog Channel = ${message.guild.channels.get(settings.chatlog).name}\`\`\``);
+      e.setDescription(`\`\`\`css\nChatLog Channel = ${message.guild.channels.cache.get(settings.chatlog).name}\`\`\``);
 
       return message.channel.send(e);
 
@@ -300,7 +300,7 @@ module.exports = {
       fs.writeFileSync(path, json);
 
       e.setTitle(`<:settings:561649800206876684> New ModLog Channel`);
-      e.setDescription(`\`\`\`css\nModLog Channel = ${message.guild.channels.get(settings.modlog).name}\`\`\``);
+      e.setDescription(`\`\`\`css\nModLog Channel = ${message.guild.channels.cache.get(settings.modlog).name}\`\`\``);
 
       return message.channel.send(e);
 

@@ -227,7 +227,7 @@ module.exports = {
         };
 
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
           .setAuthor(`${r.name} - ${r.alignment}`, r.misc.image2)
           .setThumbnail(r.misc.image1)
           .setColor(r.misc.color)

@@ -23,7 +23,7 @@ module.exports = {
         if(oContent.length > 1024) oContent = "`oldMessage.content.length` was over `1024Chars`";
         if(nContent.length > 1024) nContent = "`newMessage.content.length` was over `1024Chars`";
 
-        let e = new discord.RichEmbed()
+        let e = new discord.MessageEmbed()
           .setTitle("Message Edited")
           .setColor("663399")
           .setFooter(bot.functions.get('date').execute(Date.now()))
@@ -35,6 +35,6 @@ module.exports = {
           .addField("Old Message", oContent)
           .addField("New Message", nContent)
 
-          newMessage.guild.channels.get(settings.chatlog).send(e);
+          newMessage.guild.channels.cache.get(settings.chatlog).send(e);
     },
 };

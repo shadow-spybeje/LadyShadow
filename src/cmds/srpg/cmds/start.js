@@ -13,7 +13,7 @@ module.exports = {
         let bot = message.client;
         let fs = require('fs');
         let discord = require('discord.js');
-        let e = new discord.RichEmbed();
+        let e = new discord.MessageEmbed();
 
         srpgTrue = false;
         bot.srpg.users.some(user => { if(user.id == message.author.id) return srpgTrue = true; } );

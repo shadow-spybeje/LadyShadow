@@ -11,8 +11,8 @@ module.exports = {
     help : "dev",
 
     execute(message, args) {
-        path = `Src/Cmds/general/${args}.js`
-        if(args.length > 1) path = `Src/Cmds/${args.join('/')}.js`;
+        path = `src/cmds/general/${args}.js`
+        if(args.length > 1) path = `src/cmds/${args.join('/')}.js`;
         const codeFile = fs.readFileSync(path, "utf-8");
 
         if (!codeFile) return message.channel.send("That command does not exist.");

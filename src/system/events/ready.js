@@ -11,22 +11,24 @@ module.exports = {
 
         console.log("---==☆ Client ☆==---\n");
 
-        let users = 0;
+        /*let users = 0;
         let bots = 0;
 
-        bot.users.forEach(user => {
+        bot.users.cache.forEach(user => {
             if(user.bot){
                 bots++
             };
         });
 
-        bot.guilds.forEach(g => {
+        bot.guilds.cache.forEach(g => {
             users+=g.memberCount;
         });
 
-        users = users - bots;
+        users = users - bots;*/
 
 
+        let users = bot.users.cache.size;
+        let bots = null;
         let rifts = 0;
         let partners = 0;
 
@@ -42,7 +44,7 @@ module.exports = {
         log += `\n      ID : ${bot.user.id}`;
         log += `\n   Alpha : ${bot.system.alpha}`;
 
-        log += `\n\n  Guilds : ${bot.guilds.size}`;
+        log += `\n\n  Guilds : ${bot.guilds.cache.size}`;
         log += `\nSettings : ${bot.settings.g.size}`;
         log += `\n   Rifts : ${rifts}`;
         log += `\n   Users : ${users}`;
@@ -66,13 +68,13 @@ module.exports = {
         console.log("\n---==☆ End Client ☆==---\n");
 
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
             .setColor(bot.defaults.color)
             .setAuthor("Boot Log", bot.user.avatarURL)
             .setDescription(`\`\`\`css\n---==☆ Client ☆==---\n\n${log}\n\n---==☆ End Client ☆==---\`\`\``)
 
         bot.support.shadowServers.forEach(guild => {
-            ch = bot.channels.get(guild.support);
+            ch = bot.channels.cache.get(guild.support);
             ch.send(e);
         });
 
@@ -81,26 +83,50 @@ module.exports = {
 
 
       //Set bot Presence
-        //if(alpha) bot.user.setActivity(`as an Alpha.`, {type: "playing"});
+        /*if(bot.system.alpha) bot.user.setPresence({
+            activtiy: {name:`as an Alpha.`},
+            status: 'idle'
+        });*/
         if(bot.system.alpha){
-            bot.user.setStatus('idle');
-            bot.user.setActivity(`in Dev Mode. | ${bot.prefix.global}help`, { type: "Streaming", url: 'https://www.twitch.tv/scion_spy'});
-        };
+            //bot.user.setStatus('idle');
+            //bot.user.setPresence(`in Dev Mode. | ${bot.prefix.global}help`, { type: "Streaming", url: 'https://www.twitch.tv/scion_spy'});
 
-        if(!bot.system.alpha){
-            bot.user.setStatus('dnd');
-            bot.user.setActivity(`in "${bot.config.prefixes.global}help"`, {type: "playing"});
+            bot.user.setPresence({
+                status: "idle",
+                activity: {
+                    type: "STREAMING",
+                    name: `in Dev Mode. | ${bot.prefix.global}help`,
+                    url: "https://www.twitch.tv/scion_spy"
+                }
+            });
+        }else{
+            //bot.user.setStatus('dnd');
+            //bot.user.setPresence(`in "${bot.config.prefixes.global}help"`, {type: "playing"});
+            bot.user.setPresence({
+                status: "dnd",
+                activity: {
+                    type: "PLAYING",
+                    name: `in "${bot.config.prefixes.global}help"`
+                }
+            });
         };
 
         /**
-         * [0] Playing
+         * [0] PLAYING
          * • {type: ' '}
-         * [1] Streaming
+         * [1] STREAMING
          * • {type: ' ', url: ' '}
-         * [2] Listening
+         * [2] LISTENING
          * • {type: ' '}
-         * [3] Watching
+         * [3] WATCHING
          * • {type: ' '}
+         * [4] CUSTOM_STATUS
+         * • {}
+         * [5] COMPETING
+         * •
         */
+
+        //bot.relay.connect(null, 12784, bot);
+        bot.functions.get("_").init({ bot:bot });
     },
 };

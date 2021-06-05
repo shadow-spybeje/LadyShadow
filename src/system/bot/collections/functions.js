@@ -8,7 +8,8 @@ module.exports = {
 
       const funcFiles = fs.readdirSync('./src/system/bot/functions').filter(file => file.endsWith('.js'));
 
-      for (const file of funcFiles) { 	const func = require(`../functions/${file}`);
+      for (const file of funcFiles) { 	const func = require(`.././functions/${file}`);
+        if(file=="_functions.js") bot.functions.set("_", func);
         bot.functions.set(func.name, func);
       };
 

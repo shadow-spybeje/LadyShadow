@@ -2,6 +2,7 @@ module.exports = {
   coded : "2019-02-26",
 
   name : "help",
+  aliases : ["?"],
   description : "A list of commands that Shadow holds.",
   usage : "[category | command]",
 
@@ -9,7 +10,7 @@ module.exports = {
 
   execute (message, args) {
 
-    e = new discord.RichEmbed()
+    e = new discord.MessageEmbed()
 
    //Set cmd req stuffs
     const bot = message.client;
@@ -70,8 +71,9 @@ module.exports = {
       settings = require(`../../../../.././bot_db/ladyShadow/settings/guilds/${message.guild.id}.json`);
       dmhelp = settings.dmhelp;
 
-      if(dmhelp) {
+      if(dmhelp == true) {
         ch = message.author
+        message.channel.send("`DM.Help` is set to true.. However there is an ERR.\nWe're re-writing the Help cmd to correct this, please stand-by. `2019/09/20`");
       }else{
         prefix = settings.prefix;
         color = settings.color;
@@ -81,21 +83,21 @@ module.exports = {
       ch = message.author;
     };
 
-
     if(args.length == 0){
       e.setTitle(`Help Categories`);
       e.setColor(color);
       e.setDescription(`\`\`\`css\n [General] : <10 | general>\n   [S.RPG] : <9 | srpg>\n     [Mod] : <7 | mod>\n   [Admin] : <6 | admin>\n   [Owner] : <5 | owner>\`\`\``);
       e.setFooter(`${prefix}help <category> | ${prefix}help other`);
       return ch.send(e).then(msg => {
-          if(dmhelp){
+        message.channel.send(`Debugger > Ch:<#${ch.id}>`)
+          if(dmhelp == false){
             message.channel.send(`Okay ${message.author}, I've sent you a list of my command categories!!`);
           };
-        })
+      })
         .catch(err => {
           message.reply('there was an error sending you a DM.\nPlease make sure you have Server DM\'s set to true and then retry this command.\n`Server --> Privacy --> Allow DM\'s = true`');
           message.channel.send(err, {code: 'css'})
-        });
+      });
 
     }else if(args.length == 1){
 
@@ -160,7 +162,8 @@ module.exports = {
           e.setFooter(`${prefix}help <category>`);
 
           return ch.send(e).then(msg => {
-            if(dmhelp){
+            message.channel.send(`Debugger > Ch:<#${ch.id}>`)
+            if(dmhelp == true){
               message.channel.send(`Okay ${message.author}, I've sent you a list of my ${cat} commands!!`);
             };
           }).catch(err => {
@@ -191,7 +194,8 @@ module.exports = {
           if (cmd.usage) e.addField(`Usage`, `\`\`\`css\n${prefix}${cmd.name} ${cmd.usage}\`\`\``, true);
           if (cmd.description) e.addField(`Description`, `\`\`\`css\n${cmd.description}\`\`\``);
 
-          e.setFooter(`${bot.user.username}'s Help | ${bot.users.get(bot.support.owners[0]).tag} | ${bot.users.get(bot.support.owners[1]).tag}`);
+          //e.setFooter(`${bot.user.username}'s Help | ${bot.users.cache.get(bot.support.owners[0]).tag} | ${bot.users.cache.get(bot.support.owners[1]).tag}`);
+          e.setFooter(`${bot.user.username}'s Help`);
           return ch.send(e);
       };
 
@@ -208,7 +212,8 @@ module.exports = {
       e.setFooter(`Command Help | ${prefix}help <command>`);
 
       ch.send(e).then(msg => {
-        if(dmhelp){
+        //message.channel.send(`Debugger > Ch:<#${ch.id}>`)
+        if(dmhelp == true){
           message.channel.send(`Okay ${message.author}, I've sent you a list of my ${cat} commands!!`);
         };
       }).catch(err => {

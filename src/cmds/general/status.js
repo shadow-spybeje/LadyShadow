@@ -10,7 +10,7 @@ module.exports = {
     const bot = message.client;
     const stpg = bot.srpg;
 
-    e = new discord.RichEmbed();
+    e = new discord.MessageEmbed();
     /*
       Name
       ID
@@ -21,12 +21,12 @@ module.exports = {
     let users = 0;
     let bots = 0;
 
-    bot.users.forEach(user => {
+    bot.users.cache.forEach(user => {
         if(user.bot){
             bots++
         };
     });
-    bot.guilds.forEach(g => {
+    bot.guilds.cache.forEach(g => {
         users+=g.memberCount;
     });
 

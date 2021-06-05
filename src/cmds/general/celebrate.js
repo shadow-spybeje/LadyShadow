@@ -33,9 +33,9 @@ module.exports = {
          * `day` is the age of Shadow in years.
          */
 
-        let numID = "612187492820582410";
-        let announceID = "612198752840581150";
-        let day = `4'th`;
+        let numID = "745020884707835935";
+        let announceID = "745021460363477812";
+        let day = `5'th`;
 
         /**
          * Create a new message with `..sayd 0`, use this as `numID`;
@@ -60,7 +60,7 @@ module.exports = {
         userInfo = userF(u.id, u.tag)
 
         //@Moonglade#shdw
-        ch = bot.channels.get("569001544926887946");
+        ch = bot.channels.cache.get("569001544926887946");
         ch.send(`{\n\ \ id : ${userInfo.id}\n\ \ tag : ${userInfo.tag}\n}` ,{code:"js"});
 
 
@@ -73,7 +73,7 @@ module.exports = {
                 message.channel.send(`You're person ${num} to celebrate my ${day} birthday!!\n🎉🎂🎊`);
 
                 //@ShadowSupport#shdw_announcements
-                bot.channels.get("417094117789794304").fetchMessage(announceID).then(msg => {
+                bot.channels.cache.get("417094117789794304").fetchMessage(announceID).then(msg => {
 
                     msg.edit(`${num} people have celebrated my ${day} Birthday!! 😄`);
 

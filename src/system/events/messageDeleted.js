@@ -10,6 +10,7 @@ module.exports = {
 
       if(message.channel.type != "text") return;
         settings = bot.settings.g.get(message.guild.id);
+        if(!settings) return;
         if(!settings.chatlog) return;
 
         content = message.content;
@@ -17,7 +18,7 @@ module.exports = {
 
         if(content.length > 1024) content = "Char limit exceeded `1024 Chars`";
 
-        let e = new discord.RichEmbed()
+        let e = new discord.MessageEmbed()
           .setTitle("Message Deleted")
           .setColor("DARK_RED")
           .setFooter(bot.functions.get('date').execute(Date.now()))
@@ -27,6 +28,6 @@ module.exports = {
           .addField("Message Channel", `<#${message.channel.id}>`)
           .addField("Message Content", content)
 
-        message.guild.channels.get(settings.chatlog).send(e);
+        message.guild.channels.cache.get(settings.chatlog).send(e);
     },
 };

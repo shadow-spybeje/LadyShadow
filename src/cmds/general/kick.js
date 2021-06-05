@@ -2,56 +2,35 @@ module.exports = {
     coded : "2019-04-05",
     name : "kick",
     aliases : ["boot"],
-    description : "Kicks the desired cranky member.\nRequires `Moderator` set role, or `KICK_MEMBERS` permission.\n\nDoes not support ID's [yet]",
-    usage : "<@user> <Reason>",
+    description : "Kicks the desired cranky member.\n`KICK_MEMBERS` permission.",
+    usage : "<@user> [reason]",
     guildOnly : true,
     args : true,
-    help : "mod",
 
-    execute(message, args){
-        bot = message.client;
+    help : "staff",
 
-      //ModLog setting
-        type = "Kick";
+    async execute(message, args){
+      bot = message.client;
 
-        admin = false;
-        moderator = false;
-        staff = false;
+    //ModLog setting
+      type = "Kick";
 
-        settings = bot.settings.g.get(message.guild.id);
-        if(settings.admin) admin = true;
-        if(settings.moderator) moderator = true;
-        if(settings.staff) staff = true;
 
-        if(!admin && !moderator && !staff && !message.member.permissions.has("KICK_MEMBERS") && message.author.id != message.guild.ownerid) return message.reply("You require either the servers `MODERATOR` role, or `KICK_MEMBERS` permission to Kick members.");
+      if(!message.member.permissions.has("KICK_MEMBERS")) return message.reply("You require `BAN_MEMBERS` permission to do that.");
+      if(!message.guild.members.cache.get(message.client.user.id).permissions.has("KICK_MEMBERS")) return message.reply("I require the `KICK_MEMBERS` permission to kick somebody!!\nYou can by right-clicking (tap+hold) the user in question and selecting `Kick Member`");
 
-        if(!message.guild.members.get(message.client.user.id).permissions.has("KICK_MEMBERS")) return message.reply("I require the `KICK_MEMBERS` permission to Kick somebody!!\nYou can by selecting the user in question and tap `Kick Member`");
+      let member = await bot.functions.get("_").getUserFromMention(args[0]);
 
-        if(args.length == 0 || !message.mentions.members) return message.reply(`Please mention a user to kick.\n\`${settings.prefix}kick <@user> <reason>\``);
+      if(!member) return message.reply(`Please mention a user to kick.\n\`${bot.config.prefix}kick <@user> [reason]\``);
 
-        if(message.mentions.members.first().id == message.guild.owner.id) return message.reply(`i cannot kick the Guild Owner!! :warning: :warning: :interrobang:`);
+      let reason = args.slice(1).join(' ');
+      reason = `Kicked by "${message.author.tag}" for "${reason}"`
 
-        if(args.length == 1) return message.reply(`Please provide a reason for kicking ${message.mentions.members.first().user.tag}`);
-
-        member = message.mentions.members.first();
-        removeMember = args.shift();
-        reason = args.join(' ');
-        if(!message.guild.members.get(member.id)) return message.reply(`There's no user on this server with an \`id\` of \`${member.id}\``);
-
-        message.guild.members.get(member.id).kick(`Kicked by "${message.author.tag}" for "${reason}"`)
-            .then(msg => {
-              message.react("👌");
-
-                ch = message.channel;
-                if(settings.modlog) ch = message.guild.channels.get(settings.modlog);
-
-              //get modLog
-                embed = bot.functions.get("modlog").execute(type, reason, member.user, message.author);
-
-                ch.send(embed);
-            })
-            .catch(err => {
-                message.channel.send(bot.functions.get("err").execute(message, err));
-            });
-    }
+      message.guild.members.cache.get(member.id).kick(reason)
+      .then( message.react("👌") )
+      .catch(err => {
+          message.channel.send(`There was an error trying to kick ${member.tag}! Support has been notified!\nYou can by right-clicking (tap+hold) the user in question and selecting \`Kick Member\``);
+          bot.channels.get("417095515507785729").send(`Error Kicking a user @(${message.guild.id}) ${message.guild.name}`).then(message.channel.send(err, {code:"JS",split:true}))
+      })
+  }
 };

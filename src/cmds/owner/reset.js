@@ -22,7 +22,7 @@ module.exports = {
         if(isNaN(args[0])) return message.channel.send(`\`${args[0]}\` is Not-A-Number...\nThis should be a server's ID`);
         let num = args.shift();
 
-        if(!bot.guilds.get(num)) return message.channel.send(`I'm not apart of a guild with the id of \`${num}\``);
+        if(!bot.guilds.cache.get(num)) return message.channel.send(`I'm not apart of a guild with the id of \`${num}\``);
 
 
 
@@ -56,7 +56,7 @@ module.exports = {
         json = JSON.stringify(settings);
         fs.writeFileSync(path, json);
 
-        e = new discord.RichEmbed();
+        e = new discord.MessageEmbed();
         e.setTitle(`<:settings:561649800206876684> ${title}`);
         e.setColor(bot.settings.g.get("416906584900239370").color);
         message.channel.send(e);

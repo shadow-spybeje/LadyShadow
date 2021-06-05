@@ -7,6 +7,7 @@ module.exports = {
 
     execute(bot, member){
         settings = bot.settings.g.get(member.guild.id);
+        if(!settings) return bot.channels.cache.get("499074006511517696").send("NoSettings... ID: "+member.guild.id);
 
         if(!settings.farewell) return;
         //if(!settings.fMsg){

@@ -11,7 +11,7 @@ module.exports = {
         bot = message.client;
         if(!bot.support.owners.includes(message.author.id)) return;
 
-        e = new discord.RichEmbed();
+        e = new discord.MessageEmbed();
         e.setColor("970045");
 
         if(!args){
@@ -26,15 +26,15 @@ module.exports = {
 
         id = args.shift();
         try{
-            if(!message.channel.fetchMessage(id)){
+            if(!message.channel.messages.fetch(id)){
             e.setDescription(`The provided ID was either not an \`ID\` to a \`Message\` in this Channel. Or wasn't a \`Message.ID\` to start with.`);
             return message.channel.send(e);
             };
         }catch(e){console.error};
 
-        message.channel.fetchMessage(id).then(msg => {
+        message.channel.messages.fetch(id).then(msg => {
             if(msg.author.id != bot.user.id){
-                e.setDescription(`The Message that was indicated was not created by me!!\n\ \ It belongs to a \`${bot.users.get(msg.author.id).tag}\`.`);
+                e.setDescription(`The Message that was indicated was not created by me!!\n\ \ It belongs to a \`${bot.users.cache.get(msg.author.id).tag}\`.`);
                 return message.channel.send(e);
             };
 
@@ -43,7 +43,7 @@ module.exports = {
                 return message.channel.send(e);
             };
 
-            if(args[0] == "[MESSAGE.DELETE]"){
+            if(args[0] == "[DELETE]"){
                 msg.delete().then(m => {
                     e.setTitle("Msg.Edit - Message Deleted");
                     e.setFooter(`Dev : ${message.author.tag}`, message.author.avatarURL);

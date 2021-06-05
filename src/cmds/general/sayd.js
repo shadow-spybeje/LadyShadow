@@ -14,8 +14,8 @@ module.exports = {
 
   execute (message, args) {
 
-   if (!message.guild.members.get(message.client.user.id).permissions.has('MANAGE_MESSAGES')){
-     error = new discord.RichEmbed()
+   if (!message.guild.members.cache.get(message.client.user.id).permissions.has('MANAGE_MESSAGES')){
+     error = new discord.MessageEmbed()
       .setTitle("Missing Permissions")
       .setColor("ff0000")
       .setDescription('I don\'t have the `MANAGE_MESSAGES` permission.\n*`Cannot delete cmdAuthor\'s message.`*')

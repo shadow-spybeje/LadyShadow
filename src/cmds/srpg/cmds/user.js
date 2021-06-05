@@ -19,7 +19,7 @@ module.exports = {
             `\ \ STR : ${u.stats.str}`,
         ];
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
             .setAuthor(`${u.name}\nOf : ${bot.srpg.clans.get(u.clan).name}`)
             .setDescription(`\`\`\`css\n${info.join('\n')}\`\`\``)
             .setColor(bot.srpg.config.color)

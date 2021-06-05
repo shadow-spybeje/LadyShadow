@@ -22,25 +22,29 @@ module.exports = {
         let tag = `${message.author.tag}`;
         if(message.author.bot) tag = `🔩${message.author.tag}`;
 
-        msg = `\`${bot.functions.get('date').execute()}\`\n\`Server : ${message.guild.name}\`\n\`${tag} ||\`\n${message.content}`;
+        msg = `\`\`\`css\n${bot.functions.get('date').execute()}\nServer: ${message.guild.name} || User: ${tag}\`\`\`${message.content}`;
 
 
         channels = [];
         bot.settings.g.forEach(settings => {
-            if(!bot.guilds.has(settings.id)) return;
-            guild = bot.guilds.get(settings.id);
+            if(!bot.guilds.cache.has(settings.id)) return;
+            guild = bot.guilds.cache.get(settings.id);
             if(!settings.rift) return;
 
-            if(guild.channels.map(ch => (ch.id == settings.rift)).includes(true)) channels.push(settings.rift);
+            if(guild.channels.cache.map(ch => (ch.id == settings.rift)).includes(true)) channels.push(settings.rift);
         });
 
 
         channels.forEach(ch => {
-            c = bot.channels.get(ch);
+            c = bot.channels.cache.get(ch);
             changeTopic++
 
-            if (message.attachments.first()) {
-                c.send(msg, {split:true, file: message.attachments.first().url}).then(msg => msg.react("➖"));
+            if (message.attachments) {
+                let files = [];
+                message.attachments.forEach(attachment => {
+                    files.push(attachment.url);
+                });
+                c.send(msg, {split:true, files: files})/*.then(msg => msg.react("➖"))*/;
             } else {
                 c.send(msg, {split:true})
             };
@@ -56,7 +60,7 @@ module.exports = {
             if(e.message == "Missing Permissions") {
                 message.react("❎");
             } else {
-                e = new discord.RichEmbed()
+                e = new discord.MessageEmbed()
                     .setColor("ff0000")
                     .setdescription("```css\nAn unknown error has accurd while attempting to delete a message.```")
 

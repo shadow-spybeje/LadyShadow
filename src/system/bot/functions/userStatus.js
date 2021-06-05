@@ -13,8 +13,8 @@ module.exports = {
 
     //Grab the "Status Emojis" from the Support Server.
         emo = function(e){
-            em = bot.guilds.get("416906584900239370").emojis;
-    
+            em = bot.guilds.cache.get("416906584900239370").emojis;
+
             if(e == "o") return em.get("561649276682240009");
             if(e == "i") return em.get("561649673832759317");
             if(e == "d") return em.get("561649719978229791");

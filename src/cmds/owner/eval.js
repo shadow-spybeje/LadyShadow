@@ -14,20 +14,20 @@ module.exports = {
 
   help : "dev",
 
-  execute (message, args){
+  async execute (message, args){
 
     //Define eval phrases
 
       const discord = require('discord.js');
       const fs = require('fs');
 
-      const e = new discord.RichEmbed();
+      const e = new discord.MessageEmbed();
       const bot = message.client;
       var prefix = bot.prefix;
       var config = bot.config;
 
-      var owners = []; bot.support.owners.forEach(owner => owners.push(owner+" | "+bot.users.get(owner).tag));
-      var support = []; bot.support.users.forEach(user => support.push(user+" | "+bot.users.get(user).tag));
+      //var owners = []; bot.support.owners.forEach(owner => owners.push(owner+" | "+bot.users.cache.get(owner).tag));
+      //var support = []; bot.support.users.forEach(user => support.push(user+" | "+bot.users.cache.get(user).tag));
 
       if(message.channel.type == "text"){
         settings = bot.settings.g.get(message.guild.id);
@@ -39,6 +39,9 @@ module.exports = {
       if(settings) var prefix = settings.prefix;
 
 
+      k = function(){ process.exit(); };
+      s = function(){ srpg=require('srpg'); };
+      terminate = function() {message.channel.send(":ok_hand:")}
     //----------
     //----------
 

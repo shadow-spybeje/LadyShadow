@@ -15,17 +15,17 @@ module.exports = {
 
     let member = "";
     member = message.mentions.members.first();
-    if(!member) message.guild.members.get(args[0]);
+    if(!member) message.guild.members.cache.get(args[0]);
 
 
     if(!member) {
-      error = new discord.RichEmbed()
+      error = new discord.MessageEmbed()
         .setTitle("Missing Members")
         .setColor("ff0000")
         .setDescription(`But **${message.author.username}**,\n  that user doesn't exist on this server..`);
       message.channel.send(error);
     }else{
-      e = new discord.RichEmbed()
+      e = new discord.MessageEmbed()
         .setColor(bot.settings.g.get(message.guild.id).color)
         .setDescription(`${member}, you were just poked by ${message.author}!!`)
 

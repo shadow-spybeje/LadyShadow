@@ -7,7 +7,7 @@ module.exports = {
         bot = message.client;
         shortURL = bot.srpg.images.cover.shortURL;
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
           .setColor(bot.srpg.config.color)
           .setImage(shortURL[Math.floor(Math.random() * shortURL.length)])
 

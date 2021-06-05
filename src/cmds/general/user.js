@@ -33,7 +33,7 @@ module.exports = {
     };
 
 
-    const e = new discord.RichEmbed()
+    const e = new discord.MessageEmbed()
       .setColor(bot.settings.g.get(message.guild.id).color)
       .setTitle(`User Info - ${member.user.tag}`)
       .setThumbnail(member.user.avatarURL)

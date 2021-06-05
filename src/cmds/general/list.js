@@ -2,7 +2,7 @@ module.exports = {
     coded : "2019-07-09",
 
     name : "list",
-    description : "List various games playe on the support server.",
+    description : "List various games played by members on the support server.",
     usage : "<eoa | ff | tos | wot | wow",
 
     help : "",
@@ -52,7 +52,7 @@ module.exports = {
         _target = message.guild.roles.get(id);
         list = [];
 
-        message.guild.members.forEach(member => { if(member.roles.has(_target.id)) list.push(member.user.tag); });
+        message.guild.members.cache.forEach(member => { if(member.roles.has(_target.id)) list.push(member.user.tag); });
 
         message.channel.send(`• `+list.join(",\n• "),{split: true, code: 'js'});
     },

@@ -69,7 +69,7 @@ module.exports = {
         };
 
 
-        e = new discord.RichEmbed();
+        e = new discord.MessageEmbed();
         e.setColor("ffff00")
         e.setTitle("Reload")
         e.setDescription(`__**${cmd}**__ has been reloaded.\nPath : \`./LadyShadow_/src/cmds/${args.join('/')}.js\``)

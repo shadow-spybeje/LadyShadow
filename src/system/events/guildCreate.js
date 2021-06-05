@@ -15,7 +15,7 @@ module.exports = {
         let users = 0;
         let bots = 0;
 
-        guild.members.forEach(member => {
+        guild.members.cache.forEach(member => {
             if(member.user.bot){
                 bots++
             }else{
@@ -24,7 +24,7 @@ module.exports = {
         });
 
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
             .setTitle(guild.name)
             .setThumbnail(guild.iconURL)
             .setFooter(`Joined a Guild (Guild Count : ${bot.guilds.size}) || `+bot.functions.get('date').execute(Date.now()), bot.user.avatarURL)
@@ -35,7 +35,7 @@ module.exports = {
 
 
         bot.support.shadowServers.forEach(guild => {
-            ch = bot.channels.get(guild.server);
+            ch = bot.channels.cache.get(guild.server);
             ch.send(e);
         });
 
@@ -45,9 +45,9 @@ module.exports = {
             console.log(`System: JoinedGuild: fs.writeFileSync: Failed to create guildSETTINGS!! :: ID: ${guild.id}`);
             console.error(err);
             bot.support.shadowServers.forEach(guild => {
-                ch = bot.channels.get(guild.server);
+                ch = bot.channels.cache.get(guild.server);
 
-                errEmbed = new discord.RichEmbed()
+                errEmbed = new discord.MessageEmbed()
                   .setTitle("Cannot Create Settings!!")
                   .setColor("ff0000")
                   .setDescription(err)

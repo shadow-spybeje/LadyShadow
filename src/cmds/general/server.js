@@ -33,7 +33,7 @@ module.exports = {
 
    let msg = `\`\`\`js\n\ \ \ \ Name : ${g.name}\n \ \ \ \ \ ID : ${g.id}\n \ \ Owner : ${g.owner.displayName}#${g.owner.user.discriminator}\n Members : ${users}\n \ \ \ Bots : ${bots}\nChannels : ${g.channels.size}\`\`\``;
 
-    const e = new d.RichEmbed()
+    const e = new d.MessageEmbed()
       .setTitle('ServerInfo')
       .setThumbnail(g.iconURL)
       .setColor("00ffff")

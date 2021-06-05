@@ -13,9 +13,9 @@ module.exports = {
 
         //all the lil' niftyness's when running "eval bot.<type>"
 
-        /**
-         * eval bot.<General>
-         */
+          /**
+           * eval bot.<General>
+           */
         function general(bot) {
 
           //commands.
@@ -32,6 +32,11 @@ module.exports = {
             bot.collections = new discord.Collection();
           //configuration file.
             bot.config = config;
+          //VO Relay Config File.
+            bot.greyRelay = require('./other/greyRelay.json');
+            bot.tgftRelay = require('./other/tgftRelay.json');
+            bot.alarms = config.alarms;
+            bot.stationAlarm = require('./other/alarms.json');
           //Blacklist
             bot.blacklisted = bot.config.client.blacklist;
           //basic settings.
@@ -55,6 +60,10 @@ module.exports = {
           //user setting files.
             bot.u = new discord.Collection();
 
+          //TGFT Guild Relay
+            bot.relay = new discord.Collection();
+            bot.relay.net = require('../Relay_TGFT-Shadow/networking.js');
+            bot.relay = new bot.relay.net();
             return bot;
         };
 
@@ -119,7 +128,7 @@ module.exports = {
           //Bot System Informtion
             bot.system = new discord.Collection();
           //Bot isAlpha?
-            bot.system.alpha = false; if(package.alpha) bot.system.alpha = true
+            bot.system.alpha = false; if(package.alpha) bot.system.alpha = true;
         }
 
 

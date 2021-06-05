@@ -40,7 +40,7 @@ module.exports = {
     //---------
     //Display Settings
 
-    g = bot.guilds.get(id)
+    g = bot.guilds.cache.get(id)
 
     censor = false;
     color = "00ffff";
@@ -61,17 +61,17 @@ module.exports = {
     if(settings.color) color = settings.color;
     if(settings.censor.length >= 1) censor = true;
 
-    if(settings.welcome) welcome = `#${bot.channels.get(settings.welcome).name} (${settings.welcome})`;
-    if(settings.farewell) farewell = `#${bot.channels.get(settings.farewell).name} (${settings.farewell})`;
-    if(settings.rift) rift = `#${bot.channels.get(settings.rift).name} (${settings.rift})`;
-    if(settings.modlog) modlog = `#${bot.channels.get(settings.modlog).name} (${settings.modlog})`;
-    if(settings.chatlog) chatlog = `#${bot.channels.get(settings.chatlog).name} (${settings.chatlog})`;
+    if(settings.welcome) welcome = `#${bot.channels.cache.get(settings.welcome).name} (${settings.welcome})`;
+    if(settings.farewell) farewell = `#${bot.channels.cache.get(settings.farewell).name} (${settings.farewell})`;
+    if(settings.rift) rift = `#${bot.channels.cache.get(settings.rift).name} (${settings.rift})`;
+    if(settings.modlog) modlog = `#${bot.channels.cache.get(settings.modlog).name} (${settings.modlog})`;
+    if(settings.chatlog) chatlog = `#${bot.channels.cache.get(settings.chatlog).name} (${settings.chatlog})`;
 
-    if(settings.admin) admin = `@${bot.guilds.get(id).roles.get(settings.admin).name} (${settings.admin})`;
-    if(settings.moderator) moderator = `@${bot.guilds.get(id).roles.get(settings.moderator).name} (${settings.moderator})`;
-    if(settings.staff) staff = `@${bot.guilds.get(id).roles.get(settings.staff).name} (${settings.staff})`;
-    if(settings.join) join = `@${bot.guilds.get(id).roles.get(settings.join).name} (${settings.join})`;
-    if(settings.muted) muted = `@${bot.guilds.get(id).roles.get(settings.muted).name} (${settings.muted})`;
+    if(settings.admin) admin = `@${bot.guilds.cache.get(id).roles.get(settings.admin).name} (${settings.admin})`;
+    if(settings.moderator) moderator = `@${bot.guilds.cache.get(id).roles.get(settings.moderator).name} (${settings.moderator})`;
+    if(settings.staff) staff = `@${bot.guilds.cache.get(id).roles.get(settings.staff).name} (${settings.staff})`;
+    if(settings.join) join = `@${bot.guilds.cache.get(id).roles.get(settings.join).name} (${settings.join})`;
+    if(settings.muted) muted = `@${bot.guilds.cache.get(id).roles.get(settings.muted).name} (${settings.muted})`;
 
     partners = "";
 
@@ -95,7 +95,7 @@ module.exports = {
     };
 
 
-    const e = new discord.RichEmbed()
+    const e = new discord.MessageEmbed()
       .setAuthor(`${g.name}'s Settings`, g.iconURL)
       .setColor(color)
       .setFooter(`${g.name} - Settings: Edit with: "..set list" || ${bot.functions.get("date").execute(Date.now())}`)

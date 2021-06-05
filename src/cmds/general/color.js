@@ -11,7 +11,7 @@ module.exports = {
         let color = "00ffff";
         if(message.channel.type == "text") color = bot.settings.g.get(message.guild.id).color
 
-        e = new discord.RichEmbed()
+        e = new discord.MessageEmbed()
 
         colors = [
             { "name" : "err", "hex" : ["970045"] },

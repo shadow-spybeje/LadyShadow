@@ -3,6 +3,8 @@
   return SRPG;
 };*/
 
+//const srpg = require("srpg");
+
 module.exports = {
     coded : "2019-05-28",
     name : "srpg",
@@ -25,7 +27,7 @@ module.exports = {
         if(!cmd) return;
 
 
-        let e = new discord.RichEmbed();
+        let e = new discord.MessageEmbed();
         e.setTitle(`${cmdName} Error`)
         e.setColor("ff0000")
 
@@ -33,7 +35,7 @@ module.exports = {
         //Admin?
         if(cmd.admin){
 
-          if(!bot.support.owners.includes(message.author.id)){
+          if(!srpg.isAdmin(message.author.id)){
             e.setDescription("**Admin Only**\n• This is an Admin Only command.");
             return message.channel.send(embedError);
           };

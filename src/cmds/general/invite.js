@@ -3,7 +3,9 @@ const discord = require('discord.js');
 partnerTags = [
   "shdw | shadow",
   "ph | ichi | ichigo",
-  "gg"
+  "gg",
+  "asc",
+  "tos"
 ];
 
 module.exports = {
@@ -18,13 +20,13 @@ module.exports = {
   execute(message, args){
     bot = message.client;
 
-    e = new discord.RichEmbed()
+    e = new discord.MessageEmbed()
       .setTitle("Invite")
       .setAuthor(bot.user.tag)
       .setThumbnail(bot.user.avatarURL)
       .setColor(bot.settings.g.get(message.guild.id).color)
       .setDescription("[Bot](https://discordapp.com/oauth2/authorize?client_id=347872963636494337&scope=bot&permissions=470150359)\n[Support](https://discord.gg/9FUpBPQ)")
-      .setFooter(`Developers : ${bot.users.get(bot.support.owners[0]).tag} | ${bot.users.get(bot.support.owners[1]).tag}`)
+      //.setFooter(`Developers : ${bot.users.cache.get(bot.support.owners[0]).tag} | ${bot.users.cache.get(bot.support.owners[1]).tag}`)
 
     if(args.length == 0) return message.channel.send(e);
 
@@ -58,7 +60,7 @@ module.exports = {
           message.channel.send(`\`ERROR\` \`\`\`css\n${noID}\`\`\``);
         };
 
-        if(!bot.guilds.get(id)){
+        if(!bot.guilds.cache.get(id)){
           noGuild = "PartnerError: Not in partnered guild, guild is unavailable.";
           console.log('\n'+noGuild);
           message.channel.send(`\`ERROR\` \`\`\`css\n${noGuild}\`\`\``);
@@ -80,10 +82,8 @@ module.exports = {
         if(noID == "" && noGuild == "" && isPartnered == "" && noInvite == ""){
 
             // Gather Info.
-
-          g = bot.guilds.get(id);
+          g = bot.guilds.cache.get(id);
           s = bot.settings.g.get(id);
-
 
 
           info = {
@@ -102,29 +102,32 @@ module.exports = {
 
           };
 
-
-          if(!info.r || info.r.length == 0) info.r = "```css\n---==☆ Rules Not Set ☆==---```";
-          if(!info.d || info.d.length == 0) info.d = "```css\n---==☆ Description Not Set ☆==---```";
-
+          if(!info.r || info.r.length == 2) info.r = "```css\n---==☆ Rules Not Set ☆==---```";
+          if(!info.d || info.d.length == 2) info.d = "```css\n---==☆ Description Not Set ☆==---```";
           return info;
         };
       };
 
-
+/**
       case("ph"):
       case("ichi"):
       case("ichigo")://556013291378442240
         i = getPartner("556013291378442240");
         if(!i) return;
       break;
-
+*/
 
       case("shdw"):
       case("shadow")://416906584900239370
         i = getPartner("416906584900239370");
-        if(!i) return;
+        if(!i) return
       break;
 
+
+      case("support")://726958853861801994
+      i = getPartner("726958853861801994");
+      if(!i) return;
+      break;
 
       case("gg")://392421866767122446
         i = getPartner("392421866767122446");
@@ -132,10 +135,20 @@ module.exports = {
       break;
 
 
+      case("asc")://400314541826899968
+        i = getPartner("400314541826899968");
+        if(!i) return;
+      break;
+
+
+      case("tos")://726259085678215270
+        i = getPartner("726259085678215270");
+        if(!i) return
+
+        break;
       default:
         return;
     };
-
 
     e.setAuthor("");
     e.setDescription("");
@@ -146,7 +159,6 @@ module.exports = {
     e.addField("Invite", i.inv);
     e.addField("Description", i.d);
     e.addField("Rules", i.r);
-
     message.channel.send(e);
   },
 };

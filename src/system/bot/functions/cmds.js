@@ -19,7 +19,7 @@ module.exports = {
         if(!cmd) return;
 
 
-        let e = new discord.RichEmbed();
+        let e = new discord.MessageEmbed();
         e.setTitle(`${cmdName} Error`)
         e.setColor("ff0000")
 

@@ -1,70 +1,35 @@
 module.exports = {
     coded : "2019-04-13",
     name : "unban",
-    description : "Unbans the desired Discord-User.\nRequires `Admin` set role, or `BAN_MEMBERS` permission.",
-    usage : "<User.ID> <Reason>",
+    description : "Unans the desired Discord-User.\n`BAN_MEMBERS` permission.",
+    usage : "<@user> [reason]",
     guildOnly : true,
     args : true,
 
-    help : "mod",
+    help : "staff",
 
-    execute(message, args){
-        bot = message.client;
+    async execute(message, args){
+      bot = message.client;
 
-      //ModLog setting
-        type = "Unban";
-
-        admin = false;
-        staff = false
-
-        settings = bot.settings.g.get(message.guild.id);
-        if(settings.admin) admin = true;
-        if(settings.staff) staff = true;
-
-        if(!admin && !staff && !message.member.permissions.has("BAN_MEMBERS") && message.author.id != message.guild.ownerid) return message.reply("You require either the servers `ADMIN` role, or `BAN_MEMBERS` permission to Unban members.");
-
-        if(!message.guild.members.get(message.client.user.id).permissions.has("BAN_MEMBERS")) return message.reply("I require the `BAN_MEMBERS` permission to unban anybody!!\nYou can by selecting the user in question and tap `Revoke Ban` in `ServerSettings>Bans>User`");
-
-        if(args.length == 0) return message.reply(`Please provide a user-ID to unban.\n\`${settings.prefix}unban <user-ID> <reason>\``);
-        if(args.length <= 1) return message.reply(`Please provide a reason for unbanning \`${args[0]}\``);
-
-        member = args[0];
-        removeMember = args.shift();
-        reason = args.join(' ');
-        let exists = false;
-        let user = "";
-
-      //get modLog
-        message.guild.fetchBans()
-            .then(ban => {
-                ban.map(b => {
-                    if(b.id != member) return;
-                    if(b.id == member) exists = true;
-                    if(exists != true) return message.channel.send(`:warning: There is no user banned with an ID-\`{member}\` :warning:`);
-
-                    user = {
-                        "id" : b.id,
-                        "tag" : b.tag,
-                        "avatarURL" : b.avatarURL
-                    };
-                });
-            });
+    //ModLog setting
+      type = "UnBan";
 
 
-        if(exists == false) return;
-        message.guild.unban(member, `Unbanned by "${message.author.tag}" for "${reason}"`)
-            .then(msg => {
-                message.react("👌");
+      if(!message.member.permissions.has("BAN_MEMBERS")) return message.reply("You require `BAN_MEMBERS` permission to do that.");
+      if(!message.guild.members.cache.get(message.client.user.id).permissions.has("BAN_MEMBERS")) return message.reply("I require the `BAN_MEMBERS` permission to Unban somebody!!\nYou can by going clicking on the server name, going to `Server Settings` then `Bans` tehn search by the username, or find them manually.\nOnce you find the user in question, select them, then select `Revoke Ban`");
 
-                ch = message.channel;
-                if(settings.modlog) ch = message.guild.channels.get(settings.modlog);
+      let member = await bot.functions.get("_").getUserFromMention(args[0]);
 
-                embed = bot.functions.get('modlog').execute(type, reason, user, message.author);
+      if(!member) return message.reply(`Please mention a user to unban.\n\`${bot.config.prefix}unban <@user> [reason]\``);
 
-                ch.send(embed);
-            })
-            .catch(err => {
-                message.channel.send(bot.functions.get("err").execute(message, err));
-            });
-    }
+      let reason = args.slice(1).join(' ');
+      reason = `Unbanned by "${message.author.tag}" for "${reason}"`
+
+      message.guild.members.unban(member, { reason })
+      .then( message.react("👌") )
+      .catch(err => {
+        message.channel.send(`There was an error trying to unban ${member.tag}! Support has been notified!\nYou can by right-clicking (tap+hold) the user in question and selecting \`Kick Member\``);
+        bot.channels.get("417095515507785729").send(`Error Unbanning a user @(${message.guild.id}) ${message.guild.name}`).then(message.channel.send(err, {code:"JS",split:true}))
+    })
+  }
 };

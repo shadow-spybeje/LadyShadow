@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/shadow-spybeje/LadyShadow#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^12.5.1"
   }
 }

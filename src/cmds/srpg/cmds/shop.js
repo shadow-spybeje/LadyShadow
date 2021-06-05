@@ -21,7 +21,7 @@ module.exports = {
 
             //return message.channel.send('• '+list.join('\n• '), {code:'css',split:true});
 
-            e = new discord.RichEmbed()
+            e = new discord.MessageEmbed()
               .setTitle("SRPG Shop")
               .setColor(bot.srpg.config.color)
               .setThumbnail(bot.srpg.images.cover.shop[Math.floor(Math.random() * bot.srpg.images.cover.shop.length)])
@@ -42,13 +42,16 @@ module.exports = {
         //VIEW
         /*
         ..eval //
+        itemID = 0
 
-        item = bot.srpg.items[0];
+        ID = itemID -1;
+        const srpg = require("srpg");
+        item = srpg.db.system.items[ID]-1;
 
         e.setTitle(`${item.name} - ${item.type}`);
         e.setColor(item.color);
         e.setFooter(`Value: ${item.value}`);
-        e.setThumbnail(bot.srpg.images.items[item.id - 1].image);
+        e.setThumbnail(srpg.db.system.images.items[item.id - 1].image);
         e.setDescription(item.desc);
         if(item.stats) e.addField("Stats", "Work In Process -- Dagger: +1 atk || Shirt: +1 def"); //item.stats
         if(item.buffs) e.addField("[De]Buffs", item.buffs);

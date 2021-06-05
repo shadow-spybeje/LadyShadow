@@ -333,3 +333,7 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 src/cmds/srpg/system/config.json
+src/system/bot/other/
+src/system/bot/functions/. greyDiscordRelay.js
+src/system/bot/functions/. tgftDiscordRelay.js
+src/system/bot/functions/stationAlarms.js

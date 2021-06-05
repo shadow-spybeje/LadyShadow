@@ -5,7 +5,7 @@ module.exports = {
 
     name : "default",
     description : "This is the default Settings files for both new Guilds and Users.",
-    usage : "bot.functions.get('default').execute('<Guild || User || SrpgUser || SrpgFaction || SrpgClan>', guild/user, bot)",
+    usage : "bot.functions.get('default').execute('<guild || user || srpguser || srpgfaction || srpgclan>', <bot.guilds/users.get(ID)>, <message.client || bot>)",
 
     execute(type, info, bot){
 
@@ -17,8 +17,10 @@ module.exports = {
 
 
         function guild(guild, bot){
+          if(guild.available == false){
+            return
+          }else{
             settings = {
-                "partnered" : false,
                 "name" : `${guild.name}`,
                 "id" : `${guild.id}`,
                 "joined" : `${Date.now()}`,
@@ -47,17 +49,20 @@ module.exports = {
                 "blacklist" : [],
                 "censorWhitelist" : [],
                 "censor" : [],
+                "partnered" : false,
                 "partner" : {
                   "tag" : "",
                   "invite" : "",
                   "description" : "",
-                  "rules" : []
+                  "rules" : [],
+                  "listed":false
                 }
             };
 
             json = JSON.stringify(settings);
             fs.writeFileSync(`../.././bot_db/ladyShadow/settings/guilds/${guild.id}.json`, json)
             bot.collections.get('settings').execute(bot, fs);
+          };
         };
 
         function user(user, bot){
@@ -75,7 +80,7 @@ module.exports = {
                 "stats" : {
                   "hp" : 0,
                   "def" : 0,
-                  "str" : 0,
+                  "atk" : 0,
                 },
 
 
@@ -108,6 +113,9 @@ module.exports = {
             file = {
               "id" : `${clan.id}`,
               "name" : `${clan.name}`,
+              "misc" : {
+                "error" : 0,
+              }
             };
 
             json = JSON.stringify(file);

@@ -15,7 +15,7 @@ module.exports = {
         if(!content) content = "A total of ${message.size} messages were just deleted!!";
 
 
-        let e = new discord.RichEmbed()
+        let e = new discord.MessageEmbed()
           .setTitle("Multiple Messages Deleted")
           .setColor("DARK_RED")
           .setFooter(bot.functions.get('date').execute(Date.now()))
@@ -23,6 +23,6 @@ module.exports = {
           .addField("Message Channel", `<#${message.first().channel.id}>`)
           .addField("Message Content", content)
 
-        message.guild.channels.get(settings.chatlog).send(e);
+        message.guild.channels.cache.get(settings.chatlog).send(e);
     },
 };

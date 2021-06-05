@@ -1,5 +1,5 @@
 discord = require('discord.js');
-e = new discord.RichEmbed();
+e = new discord.MessageEmbed();
 
 module.exports = {
   coded : "2019-03-30",
@@ -8,15 +8,20 @@ module.exports = {
   guildOnly : true,
   help : "general",
 
+  initizlized: [],
+
   execute(message){
+    if(!this.initizlized.includes(message.guild.id)){
+      message.guild.members.fetch();
+      this.initizlized.push(message.guild.id);
+    }
 
   //Grab Guild.Members and Guild.Settings for the Guild 'cmd; was executed in.
     g = message.guild;
     bot = message.client;
     settings = bot.settings.g.get(g.id)
-    mem = g.members;
-    bot = message.client;
-    e = new discord.RichEmbed();
+    mem = g.members.cache;
+    e = new discord.MessageEmbed();
 
 
   //Create the required Separate Arrays.
@@ -31,7 +36,7 @@ module.exports = {
 
   //Grab the "Status Emojis" from the Support Server.
     emo = function(e){
-        em = bot.guilds.get("416906584900239370").emojis;
+        em = bot.guilds.cache.get("416906584900239370").emojis.cache;
 
         if(e == "o") return em.get("561649276682240009");
         if(e == "i") return em.get("561649673832759317");
@@ -71,7 +76,7 @@ module.exports = {
   //Put together and use all of this information.
     mem.forEach(m => {
       user = m.user;
-      if(m.roles.has(staff)){
+      if(m.roles.cache.has(staff)){
           status(user, m);
       };
     });

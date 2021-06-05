@@ -44,6 +44,6 @@ module.exports = {
     array = general.concat(support.concat(owner.concat(srpg)))
     coma = ""; if(unloaded) coma = ", ";
 
-    console.log(`System:  Commands   :: Loaded : ${array.length} UnLoaded : ${unloaded.length} Type : [★] - Owner || [☆] - Support || [🗡] - S.RPG || [✪] - UnLoaded\n• • ${array.join(', ')}${coma}${unloaded.join(', ')}\n`)
+    console.log(`System:  Commands   :: Loaded : ${array.length} UnLoaded : ${unloaded.length} Type : [★] - Owner || [☆] - Support || [⚔] - S.RPG || [✪] - UnLoaded\n• • ${array.join(', ')}${coma}${unloaded.join(', ')}\n`)
   }
 };
